@@ -73,6 +73,17 @@ body::before {
 }
 
 header {
+.left-arrow {
+  position: absolute;
+  left: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 0;
+  padding-left: 2.2rem;
+  z-index: 5;
+}
+
+header {
   text-align: center;
   background-color: #3c2b1d;
   padding: 0;
