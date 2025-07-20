@@ -1,6 +1,6 @@
 // Dynamically generate a large number of grass blades for performance and maintainability
 (function() {
-  const NUM_BLADES = 100; // Reduced from 2400 to 1200
+  const NUM_BLADES = 300; // 100 blades for both mobile and desktop
   const grassContainer = document.querySelector('.grass-container');
   if (!grassContainer) return;
 
