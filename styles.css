@@ -1,3 +1,41 @@
+/* Hockey article background: looking down on an ice rink */
+.hockey-bg {
+  background:
+    repeating-linear-gradient(90deg, #e6f3ff 0 2px, transparent 2px 99px), /* vertical rink lines */
+    repeating-linear-gradient(0deg, #e6f3ff 0 2px, transparent 2px 99px), /* horizontal rink lines */
+    radial-gradient(circle at 50% 50%, #b0c4de 0 30%, #f0f8ff 31% 100%), /* rink center */
+    radial-gradient(circle at 20% 50%, #4682b4 0 4%, transparent 4.5%), /* left faceoff */
+    radial-gradient(circle at 80% 50%, #4682b4 0 4%, transparent 4.5%), /* right faceoff */
+    linear-gradient(to bottom, #f0f8ff 0%, #e6f3ff 100%);
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* Hockey stick icon in back button */
+.hockey-icon svg {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+/* Golf article background: looking down on a golf hole */
+.golf-bg {
+  background:
+    radial-gradient(circle at 70% 60%, #d1a338 0 2%, transparent 2.5%), /* cup */
+    radial-gradient(circle at 70% 60%, #fff 0 1.2%, transparent 1.5%), /* cup highlight */
+    radial-gradient(circle at 70% 60%, #4a7c59 0 7%, transparent 7.5%), /* green border */
+    radial-gradient(circle at 70% 60%, #c8e6c8 0 12%, transparent 12.5%), /* green */
+    radial-gradient(ellipse at 60% 80%, #e8e0b0 0 7%, transparent 7.5%), /* sand trap */
+    linear-gradient(to bottom, #e8f5e8 0%, #c8e6c8 100%);
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* Golf club icon in back button */
+.golf-icon svg {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 8px;
+}
 /* Homepage button in header */
 .home-btn {
   display: inline-block;
