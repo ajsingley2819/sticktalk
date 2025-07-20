@@ -102,10 +102,12 @@ header {
   object-fit: cover;
 }
 
+
+/* Split layout for desktop */
 .split-container {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  min-height: 60vh;
   position: relative;
   z-index: 2;
 }
@@ -116,15 +118,15 @@ section {
   box-sizing: border-box;
 }
 
+
+/* Golf (left) is green, Hockey (right) is white/ice */
 .golf-section {
-  background: linear-gradient(135deg, #fff6da 0%, #e8f5e8 50%, #c8e6c8 100%);
+  background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c8 100%);
   border-right: 2px solid #4a7c59;
-  border-bottom: 4px solid #2d5a3d;
 }
 
 .hockey-section {
-  background: linear-gradient(135deg, #ffe7c7 0%, #f0f8ff 50%, #e6f3ff 100%);
-  border-bottom: 4px solid #4682b4;
+  background: #fff;
 }
 
 h2 {
@@ -174,5 +176,10 @@ footer {
 @media (max-width: 768px) {
   .split-container {
     flex-direction: column;
+    min-height: unset;
+  }
+  .golf-section, .hockey-section {
+    border-right: none;
+    border-bottom: none;
   }
 }
