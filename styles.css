@@ -275,9 +275,9 @@ footer {
   }
 }
 
-.golf-section:hover {
+.article-card.golf-link:hover {
   cursor: url('assets/golf-cursor.png') 16 16, pointer;
 }
-.hockey-section:hover {
+.article-card.hockey-link:hover {
   cursor: url('assets/hockey-cursor.png') 16 16, pointer;
 }
