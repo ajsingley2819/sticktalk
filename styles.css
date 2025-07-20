@@ -6,7 +6,7 @@
   left: 0;
   bottom: 0;
   width: 100vw;
-  height: 18px;
+  height: 28px;
   z-index: 101;
   pointer-events: none;
   display: flex;
@@ -14,7 +14,7 @@
 }
 .blade {
   width: 6px;
-  height: 18px;
+  height: 28px;
   margin: 0 -1px;
   display: inline-block;
   animation: grass-blow 1.8s cubic-bezier(.4,1.6,.6,1) infinite alternate;
