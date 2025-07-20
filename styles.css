@@ -1,0 +1,84 @@
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f6e5b5;
+  color: #3c2b1d;
+}
+
+header {
+  text-align: center;
+  background-color: #3c2b1d;
+  padding: 1rem;
+}
+
+.logo {
+  max-height: 100px;
+}
+
+.split-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+section {
+  flex: 1;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.golf-section {
+  background-color: #fff6da;
+  border-right: 2px solid #d1a338;
+}
+
+.hockey-section {
+  background-color: #ffe7c7;
+}
+
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin-bottom: 0.2rem;
+}
+
+.tagline {
+  font-style: italic;
+  margin-bottom: 1rem;
+  color: #872e24;
+}
+
+.article-card {
+  display: block;
+  background: white;
+  border-radius: 10px;
+  padding: 1rem;
+  text-decoration: none;
+  color: #3c2b1d;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+  margin-bottom: 1rem;
+}
+
+.article-card:hover {
+  transform: scale(1.02);
+}
+
+.article-card img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+footer {
+  background-color: #3c2b1d;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .split-container {
+    flex-direction: column;
+  }
+}
