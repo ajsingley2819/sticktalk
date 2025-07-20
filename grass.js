@@ -4,25 +4,30 @@
   const grassContainer = document.querySelector('.grass-container');
   if (!grassContainer) return;
 
-  // 12 unique blade SVG paths/colors, now even taller (height 64)
-  const bladeSvgs = [
-    '<svg viewBox="0 0 10 64"><path d="M5 64 Q7 36 5 0" stroke="#4a7c59" stroke-width="2" fill="none"/></svg>',
-    '<svg viewBox="0 0 10 64"><path d="M5 64 Q3 36 5 0" stroke="#7bb661" stroke-width="2" fill="none"/></svg>',
-    '<svg viewBox="0 0 10 64"><path d="M5 64 Q8 24 5 0" stroke="#4a7c59" stroke-width="2" fill="none"/></svg>',
-    '<svg viewBox="0 0 10 64"><path d="M5 64 Q2 24 5 0" stroke="#7bb661" stroke-width="2" fill="none"/></svg>',
-    '<svg viewBox="0 0 10 64"><path d="M5 64 Q6 54 5 0" stroke="#4a7c59" stroke-width="2" fill="none"/></svg>',
-    '<svg viewBox="0 0 10 64"><path d="M5 64 Q4 54 5 0" stroke="#7bb661" stroke-width="2" fill="none"/></svg>',
-    '<svg viewBox="0 0 10 64"><path d="M5 64 Q9 48 5 0" stroke="#4a7c59" stroke-width="2" fill="none"/></svg>',
-    '<svg viewBox="0 0 10 64"><path d="M5 64 Q1 48 5 0" stroke="#7bb661" stroke-width="2" fill="none"/></svg>',
-    '<svg viewBox="0 0 10 64"><path d="M5 64 Q8 63 5 0" stroke="#4a7c59" stroke-width="2" fill="none"/></svg>',
-    '<svg viewBox="0 0 10 64"><path d="M5 64 Q2 63 5 0" stroke="#7bb661" stroke-width="2" fill="none"/></svg>',
-    '<svg viewBox="0 0 10 64"><path d="M5 64 Q5 44 5 0" stroke="#4a7c59" stroke-width="2" fill="none"/></svg>',
-    '<svg viewBox="0 0 10 64"><path d="M5 64 Q5 24 5 0" stroke="#7bb661" stroke-width="2" fill="none"/></svg>'
+  // 12 unique blade SVG path templates (with placeholders for height and Q control points)
+  const bladeTemplates = [
+    {stroke: '#4a7c59', qx: 7, qy: 36},
+    {stroke: '#7bb661', qx: 3, qy: 36},
+    {stroke: '#4a7c59', qx: 8, qy: 24},
+    {stroke: '#7bb661', qx: 2, qy: 24},
+    {stroke: '#4a7c59', qx: 6, qy: 54},
+    {stroke: '#7bb661', qx: 4, qy: 54},
+    {stroke: '#4a7c59', qx: 9, qy: 48},
+    {stroke: '#7bb661', qx: 1, qy: 48},
+    {stroke: '#4a7c59', qx: 8, qy: 63},
+    {stroke: '#7bb661', qx: 2, qy: 63},
+    {stroke: '#4a7c59', qx: 5, qy: 44},
+    {stroke: '#7bb661', qx: 5, qy: 24}
   ];
 
   let bladesHtml = '';
   for (let i = 0; i < NUM_BLADES; i++) {
-    bladesHtml += `<span class="blade">${bladeSvgs[i % 12]}</span>`;
+    // Randomize height between 44 and 68 for natural variation
+    const height = 44 + Math.floor(Math.random() * 25); // 44-68 px
+    const t = bladeTemplates[i % 12];
+    // Path comes to a point at the top (5 0)
+    const svg = `<svg viewBox="0 0 10 ${height}"><path d="M5 ${height} Q${t.qx} ${t.qy} 5 0 T5 0" stroke="${t.stroke}" stroke-width="2" fill="none"/></svg>`;
+    bladesHtml += `<span class="blade">${svg}</span>`;
   }
   grassContainer.innerHTML = bladesHtml;
 })();
