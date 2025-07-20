@@ -254,3 +254,10 @@ footer {
     border-bottom: none;
   }
 }
+
+.golf-section:hover {
+  cursor: url('assets/golf-cursor.png') 16 16, pointer;
+}
+.hockey-section:hover {
+  cursor: url('assets/hockey-cursor.png') 16 16, pointer;
+}
