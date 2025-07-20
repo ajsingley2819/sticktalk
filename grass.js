@@ -6,7 +6,7 @@
   const grassContainer = document.querySelector('.grass-container');
   if (!grassContainer) return;
 
-  // 12 unique blade SVG path templates (with placeholders for height and Q control points)
+  // 12 unique blade SVG path templates (with placeholders for Q control points)
   const bladeTemplates = [
     {stroke: '#4a7c59', qx: 7, qy: 36},
     {stroke: '#7bb661', qx: 3, qy: 36},
@@ -22,13 +22,14 @@
     {stroke: '#7bb661', qx: 5, qy: 24}
   ];
 
+  const maxHeight = 108; // All blades start at y = maxHeight (taller)
   let bladesHtml = '';
   for (let i = 0; i < NUM_BLADES; i++) {
-    // Randomize height between 44 and 68 for natural variation
-    const height = 44 + Math.floor(Math.random() * 25); // 44-68 px
+    // Randomize tip height between 0 and 44 for natural variation (taller range)
+    const tipY = Math.floor(Math.random() * 45); // 0-44 px from the top
     const t = bladeTemplates[i % 12];
-    // Path comes to a point at the top (5 0)
-    const svg = `<svg viewBox="0 0 10 ${height}"><path d="M5 ${height} Q${t.qx} ${t.qy} 5 0 T5 0" stroke="${t.stroke}" stroke-width="2" fill="none"/></svg>`;
+    // Path starts at (5, maxHeight), curves to (t.qx, t.qy + tipY), ends at (5, tipY)
+    const svg = `<svg viewBox="0 0 10 ${maxHeight}"><path d="M5 ${maxHeight} Q${t.qx} ${t.qy + tipY} 5 ${tipY} T5 ${tipY}" stroke="${t.stroke}" stroke-width="2" fill="none"/></svg>`;
     bladesHtml += `<span class="blade">${svg}</span>`;
   }
   grassContainer.innerHTML = bladesHtml;
