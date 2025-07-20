@@ -4,20 +4,20 @@
   const grassContainer = document.querySelector('.grass-container');
   if (!grassContainer) return;
 
-  // 12 unique blade SVG paths/colors, now taller (height 40)
+  // 12 unique blade SVG paths/colors, now a little taller (height 48)
   const bladeSvgs = [
-    '<svg viewBox="0 0 10 40"><path d="M5 40 Q7 24 5 0" stroke="#4a7c59" stroke-width="2" fill="none"/></svg>',
-    '<svg viewBox="0 0 10 40"><path d="M5 40 Q3 24 5 0" stroke="#7bb661" stroke-width="2" fill="none"/></svg>',
-    '<svg viewBox="0 0 10 40"><path d="M5 40 Q8 15 5 0" stroke="#4a7c59" stroke-width="2" fill="none"/></svg>',
-    '<svg viewBox="0 0 10 40"><path d="M5 40 Q2 15 5 0" stroke="#7bb661" stroke-width="2" fill="none"/></svg>',
-    '<svg viewBox="0 0 10 40"><path d="M5 40 Q6 34 5 0" stroke="#4a7c59" stroke-width="2" fill="none"/></svg>',
-    '<svg viewBox="0 0 10 40"><path d="M5 40 Q4 34 5 0" stroke="#7bb661" stroke-width="2" fill="none"/></svg>',
-    '<svg viewBox="0 0 10 40"><path d="M5 40 Q9 30 5 0" stroke="#4a7c59" stroke-width="2" fill="none"/></svg>',
-    '<svg viewBox="0 0 10 40"><path d="M5 40 Q1 30 5 0" stroke="#7bb661" stroke-width="2" fill="none"/></svg>',
-    '<svg viewBox="0 0 10 40"><path d="M5 40 Q8 39 5 0" stroke="#4a7c59" stroke-width="2" fill="none"/></svg>',
-    '<svg viewBox="0 0 10 40"><path d="M5 40 Q2 39 5 0" stroke="#7bb661" stroke-width="2" fill="none"/></svg>',
-    '<svg viewBox="0 0 10 40"><path d="M5 40 Q5 28 5 0" stroke="#4a7c59" stroke-width="2" fill="none"/></svg>',
-    '<svg viewBox="0 0 10 40"><path d="M5 40 Q5 15 5 0" stroke="#7bb661" stroke-width="2" fill="none"/></svg>'
+    '<svg viewBox="0 0 10 48"><path d="M5 48 Q7 28 5 0" stroke="#4a7c59" stroke-width="2" fill="none"/></svg>',
+    '<svg viewBox="0 0 10 48"><path d="M5 48 Q3 28 5 0" stroke="#7bb661" stroke-width="2" fill="none"/></svg>',
+    '<svg viewBox="0 0 10 48"><path d="M5 48 Q8 18 5 0" stroke="#4a7c59" stroke-width="2" fill="none"/></svg>',
+    '<svg viewBox="0 0 10 48"><path d="M5 48 Q2 18 5 0" stroke="#7bb661" stroke-width="2" fill="none"/></svg>',
+    '<svg viewBox="0 0 10 48"><path d="M5 48 Q6 40 5 0" stroke="#4a7c59" stroke-width="2" fill="none"/></svg>',
+    '<svg viewBox="0 0 10 48"><path d="M5 48 Q4 40 5 0" stroke="#7bb661" stroke-width="2" fill="none"/></svg>',
+    '<svg viewBox="0 0 10 48"><path d="M5 48 Q9 36 5 0" stroke="#4a7c59" stroke-width="2" fill="none"/></svg>',
+    '<svg viewBox="0 0 10 48"><path d="M5 48 Q1 36 5 0" stroke="#7bb661" stroke-width="2" fill="none"/></svg>',
+    '<svg viewBox="0 0 10 48"><path d="M5 48 Q8 47 5 0" stroke="#4a7c59" stroke-width="2" fill="none"/></svg>',
+    '<svg viewBox="0 0 10 48"><path d="M5 48 Q2 47 5 0" stroke="#7bb661" stroke-width="2" fill="none"/></svg>',
+    '<svg viewBox="0 0 10 48"><path d="M5 48 Q5 34 5 0" stroke="#4a7c59" stroke-width="2" fill="none"/></svg>',
+    '<svg viewBox="0 0 10 48"><path d="M5 48 Q5 18 5 0" stroke="#7bb661" stroke-width="2" fill="none"/></svg>'
   ];
 
   let bladesHtml = '';
