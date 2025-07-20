@@ -20,7 +20,6 @@
 .home-btn:hover {
   background: linear-gradient(90deg, #2d5a3d 60%, #4a7c59 100%);
   color: #fff;
-  transform: scale(1.05);
 }
 /* Banner text for Stick Talk */
 .banner-text {
