@@ -282,3 +282,12 @@ footer {
 .article-card.hockey-link:hover {
   cursor: url('assets/hockey-cursor.png') 16 16, pointer;
 }
+.about-section {
+  background: linear-gradient(135deg, #f6e5b5 0%, #e6cfa1 100%);
+  border-bottom: 2px solid #d1a338;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.article-card.about-link:hover {
+  cursor: url('assets/whiskey.png') 16 16, pointer;
+}
