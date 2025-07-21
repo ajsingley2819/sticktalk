@@ -155,6 +155,7 @@ body {
 }
 
 header {
+  position: relative;
   text-align: center;
   background-color: #3c2b1d;
   padding: 0;
@@ -284,7 +285,8 @@ footer {
 .banner-stick {
   position: absolute;
   top: 18px;
-  height: 64px;
+  max-height: 140px;
+  width: auto;
   z-index: 10;
 }
 .banner-stick.left {
