@@ -281,3 +281,15 @@ footer {
 .article-card.hockey-link:hover {
   cursor: url('assets/hockey-cursor.png') 16 16, pointer;
 }
+.banner-stick {
+  position: absolute;
+  top: 18px;
+  height: 64px;
+  z-index: 10;
+}
+.banner-stick.left {
+  left: 32px;
+}
+.banner-stick.right {
+  right: 32px;
+}
