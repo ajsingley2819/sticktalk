@@ -285,8 +285,8 @@ footer {
 .banner-stick {
   position: absolute;
   top: 0;
-  height: 25%;
-  width: 25%;
+  height: 45%;
+  width: 45%;
   object-fit: contain;
   z-index: 10;
 }
