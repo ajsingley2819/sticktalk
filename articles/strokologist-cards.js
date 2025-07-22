@@ -13,8 +13,7 @@
   } catch (e) {
     // Fallback: manually list files if directory listing is not available
     articleFiles = [
-      'The Open Preview (7_16_25).html',
-      'sample-golf.html'
+      'The Open Preview (7_16_25).html'
     ];
   }
   const cardContainer = document.getElementById('article-cards');
