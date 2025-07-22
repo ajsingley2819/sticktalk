@@ -1,10 +1,22 @@
 // This script will scan the strokologist/ folder, extract the first image, title, and subject from each HTML file, and generate article cards dynamically.
 (async function() {
   const articlesFolder = 'strokologist/';
-  // List of article HTML files (manually listed for now, can be automated with server-side or build tooling)
-  const articleFiles = [
-    'The Open Preview (7_16_25).html'
-  ];
+  let articleFiles = [];
+  try {
+    // Try to fetch directory listing (works if server allows it)
+    const res = await fetch(articlesFolder);
+    if (res.ok) {
+      const text = await res.text();
+      const matches = [...text.matchAll(/href=\"([^\"]+\.html)\"/g)];
+      articleFiles = matches.map(m => m[1]);
+    }
+  } catch (e) {
+    // Fallback: manually list files if directory listing is not available
+    articleFiles = [
+      'The Open Preview (7_16_25).html',
+      'sample-golf.html'
+    ];
+  }
   const cardContainer = document.getElementById('article-cards');
   if (!cardContainer) return;
   for (const file of articleFiles) {
