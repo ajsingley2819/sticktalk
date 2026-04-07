@@ -1,13 +1,14 @@
-<div class="grass-container" aria-hidden="true"></div>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Power Play Tactics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Power Play Tactics - Stick Talk</title>
   <link rel="stylesheet" href="../styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Playfair+Display&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <div class="grass-container" aria-hidden="true"></div>
   <div class="snowflakes" aria-hidden="true">
     <span class="snowflake">❄</span>
     <span class="snowflake">❅</span>
@@ -30,24 +31,41 @@
     <span class="snowflake">❄</span>
     <span class="snowflake">❅</span>
   </div>
-  <header>
-    <a href="../index.html" class="home-btn left-arrow">&#8592; Overturned</a>
-    <h1 class="banner-text">Stick Talk</h1>
-  </header>
-  <main>
-    <h1>Power Play Tactics</h1>
-    <p><strong>By The Puckfessor</strong> — Tenured in the Sin Bin</p>
-    <p>This is where the detailed hockey article goes. Think puck cycling, zone entry, and shot percentage angles.</p>
 
-    <!-- Embedded Puckfessor Articles Section -->
-    <section class="puckfessor-articles-section">
-      <h2>More from The Puckfessor</h2>
-      <ul class="static-article-list">
-        <li><a href="puckfessor/Example Document.html" target="_blank">Example Document.html</a></li>
+  <header>
+    <h1 class="banner-text">Stick Talk</h1>
+    <nav class="main-nav">
+      <a href="../index.html" class="nav-link">Home</a>
+      <a href="puckfessor-articles.html" class="nav-link active">The Puckfessor</a>
+      <a href="strokologist-articles.html" class="nav-link">Dr. Strokologist</a>
+    </nav>
+  </header>
+
+  <main style="padding: 2rem; background-color: #fff; position: relative; z-index: 2; min-height: 70vh;">
+    <article style="max-width: 900px; margin: 0 auto; background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+      <h1 style="color: #3c2b1d; margin-bottom: 0.5rem;">Power Play Tactics</h1>
+      <p style="color: #872e24; font-size: 1.1rem; font-weight: 600; margin: 0 0 1rem 0;"><strong>By The Puckfessor</strong> — Tenured in the Sin Bin</p>
+      
+      <p style="color: #666; line-height: 1.6;">This is where the detailed hockey article goes. Think puck cycling, zone entry, and shot percentage angles. Mastering the power play is what separates championship teams from the rest of the league.</p>
+      
+      <h2 style="color: #3c2b1d; margin-top: 2rem;">Key Strategies</h2>
+      <ul style="color: #666; line-height: 1.8;">
+        <li>Effective puck cycling to tire the defense</li>
+        <li>Smart zone entry to maintain possession</li>
+        <li>High-percentage shot placement</li>
+        <li>Player positioning and off-puck movement</li>
       </ul>
-      <div id="article-cards" class="articles"></div>
-    </section>
+    </article>
   </main>
+
+  <footer>
+    <p>© 2025 Stick Talk - Where hockey meets laughs</p>
+    <p><a href="../index.html">Back to Home</a> | <a href="puckfessor-articles.html">More from The Puckfessor</a></p>
+  </footer>
+
+  <script src="../grass.js"></script>
+</body>
+</html>
   <footer>
     <p>© 2025 Stick Talk</p>
   </footer>

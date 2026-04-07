@@ -2,11 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Mastering the Short Game</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mastering the Short Game - Stick Talk</title>
   <link rel="stylesheet" href="../styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Playfair+Display&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <div class="grass-container" aria-hidden="true"></div>
   <div class="snowflakes" aria-hidden="true">
     <span class="snowflake">❄</span>
     <span class="snowflake">❅</span>
@@ -28,26 +30,42 @@
     <span class="snowflake">❆</span>
     <span class="snowflake">❄</span>
     <span class="snowflake">❅</span>
-    <span class="snowflake">❆</span>
-    <span class="snowflake">❄</span>
   </div>
-  <div class="grass-container" aria-hidden="true"></div>
-  <body>
-    <header>
-      <a href="../index.html" class="home-btn left-arrow">&#8592; Mulligan</a>
-      <h1 class="banner-text">Stick Talk</h1>
-    </header>
-    <main>
-      <h1>Mastering the Short Game</h1>
-      <p><strong>By Dr. Strokologist</strong> — King of Lag</p>
-      <p>This is where the detailed golf article goes. Talk about wrist hinge, tempo, putter face control, etc.</p>
 
-      <!-- Embedded Strokologist Articles Section -->
-      <section class="strokologist-articles-section">
-        <h2>More from The Strokologist</h2>
-        <ul class="static-article-list">
-          <li><a href="strokologist/TheOpenPreview_71625_.html" target="_blank">The Doctors Open Preview</a></li>
-        </ul>
+  <header>
+    <h1 class="banner-text">Stick Talk</h1>
+    <nav class="main-nav">
+      <a href="../index.html" class="nav-link">Home</a>
+      <a href="puckfessor-articles.html" class="nav-link">The Puckfessor</a>
+      <a href="strokologist-articles.html" class="nav-link active">Dr. Strokologist</a>
+    </nav>
+  </header>
+
+  <main style="padding: 2rem; background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c8 100%); position: relative; z-index: 2; min-height: 70vh;">
+    <article style="max-width: 900px; margin: 0 auto; background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+      <h1 style="color: #3c2b1d; margin-bottom: 0.5rem;">Mastering the Short Game</h1>
+      <p style="color: #872e24; font-size: 1.1rem; font-weight: 600; margin: 0 0 1rem 0;"><strong>By Dr. Strokologist</strong> — King of Lag</p>
+      
+      <p style="color: #666; line-height: 1.6;">This is where the detailed golf article goes. Talk about wrist hinge, tempo, putter face control, and all the techniques that separate the good golfers from the great ones. The short game is where championships are won!</p>
+      
+      <h2 style="color: #3c2b1d; margin-top: 2rem;">Key Takeaways</h2>
+      <ul style="color: #666; line-height: 1.8;">
+        <li>Master your wrist hinge for consistent strikes</li>
+        <li>Tempo control is essential for accuracy</li>
+        <li>Putter face alignment makes all the difference</li>
+        <li>Practice your short game regularly</li>
+      </ul>
+    </article>
+  </main>
+
+  <footer>
+    <p>© 2025 Stick Talk - Where golf meets laughs</p>
+    <p><a href="../index.html">Back to Home</a> | <a href="strokologist-articles.html">More from Dr. Strokologist</a></p>
+  </footer>
+
+  <script src="../grass.js"></script>
+</body>
+</html>
         <div id="article-cards" class="articles"></div>
       </section>
     </main>

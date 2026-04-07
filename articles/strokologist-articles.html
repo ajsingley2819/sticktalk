@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dr. Strokologist - Stick Talk</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Playfair+Display&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="grass-container" aria-hidden="true"></div>
+  <div class="snowflakes" aria-hidden="true">
+    <span class="snowflake">❄</span>
+    <span class="snowflake">❅</span>
+    <span class="snowflake">❆</span>
+    <span class="snowflake">❄</span>
+    <span class="snowflake">❅</span>
+    <span class="snowflake">❆</span>
+    <span class="snowflake">❄</span>
+    <span class="snowflake">❅</span>
+    <span class="snowflake">❆</span>
+    <span class="snowflake">❄</span>
+    <span class="snowflake">❅</span>
+    <span class="snowflake">❆</span>
+    <span class="snowflake">❄</span>
+    <span class="snowflake">❅</span>
+    <span class="snowflake">❆</span>
+    <span class="snowflake">❄</span>
+    <span class="snowflake">❅</span>
+    <span class="snowflake">❆</span>
+    <span class="snowflake">❄</span>
+    <span class="snowflake">❅</span>
+  </div>
+
+  <header>
+    <h1 class="banner-text">Stick Talk</h1>
+    <nav class="main-nav">
+      <a href="../index.html" class="nav-link">Home</a>
+      <a href="puckfessor-articles.html" class="nav-link">The Puckfessor</a>
+      <a href="strokologist-articles.html" class="nav-link active">Dr. Strokologist</a>
+    </nav>
+  </header>
+
+  <main style="padding: 2rem; background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c8 100%); position: relative; z-index: 2; min-height: 70vh;">
+    <section style="max-width: 1200px; margin: 0 auto;">
+      <div style="display: flex; align-items: center; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap;">
+        <img src="../assets/upd_stroke.png" alt="Dr. Strokologist" style="width: 200px; height: 200px; object-fit: cover; border-radius: 10px;">
+        <div>
+          <h1 style="margin: 0 0 0.5rem 0; color: #3c2b1d;">Dr. Strokologist</h1>
+          <p style="font-size: 1.2rem; color: #872e24; margin: 0 0 0.5rem 0; font-weight: 600;">King of Lag</p>
+          <p style="color: #666; margin: 0;">Golf expertise, lag putting, tempo control, and short game mastery from Dr. Strokologist.</p>
+        </div>
+      </div>
+
+      <h2 style="border-bottom: 2px solid #4a7c59; padding-bottom: 0.5rem; margin: 3rem 0 2rem 0; color: #3c2b1d;">Latest Articles</h2>
+      
+      <div id="strokologist-articles" class="articles" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2rem;">
+        <!-- Articles will be loaded here by JavaScript -->
+      </div>
+
+      <div id="no-articles" style="text-align: center; padding: 3rem; display: none;">
+        <p style="font-size: 1.1rem; color: #999;">No articles yet. Check back soon!</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Stick Talk - Where golf meets laughs</p>
+    <p><a href="../index.html">Back to Home</a></p>
+  </footer>
+
+  <script src="../grass.js"></script>
+  <script>
+    // Load Strokologist articles
+    (async function() {
+      const articlesContainer = document.getElementById('strokologist-articles');
+      const noArticlesMsg = document.getElementById('no-articles');
+      
+      const strokologistArticles = [
+        {
+          title: 'Mastering the Short Game',
+          file: 'sample-golf.html',
+          description: 'A deep dive into lag putting and tempo control.'
+        },
+        {
+          title: 'The Open Preview',
+          file: 'strokologist/TheOpenPreview_71625_.html',
+          description: 'Dr. Strokologist\'s expert analysis of The Open Championship.'
+        }
+      ];
+
+      let articlesFound = 0;
+
+      for (const article of strokologistArticles) {
+        try {
+          const res = await fetch(article.file);
+          if (!res.ok) continue;
+
+          const card = document.createElement('a');
+          card.className = 'article-card golf-link';
+          card.href = article.file;
+          card.style.maxWidth = 'none';
+          card.style.marginBottom = '0';
+          card.innerHTML = `
+            <h3>${article.title}</h3>
+            <p>${article.description}</p>
+          `;
+          articlesContainer.appendChild(card);
+          articlesFound++;
+        } catch (e) {
+          // Ignore missing files
+        }
+      }
+
+      if (articlesFound === 0) {
+        noArticlesMsg.style.display = 'block';
+      }
+    })();
+  </script>
+</body>
+</html>
