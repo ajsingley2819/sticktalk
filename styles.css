@@ -55,6 +55,10 @@ header .banner-text {
   align-items: center;
 }
 
+.home-nav {
+  gap: 3rem;
+}
+
 .nav-link {
   color: #fff6da;
   text-decoration: none;
@@ -74,6 +78,38 @@ header .banner-text {
 .nav-link.active {
   border-bottom-color: #d1a338;
   color: #d1a338;
+}
+
+.puckfessor-btn,
+.strokologist-btn {
+  position: relative;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #fff6da;
+}
+
+.puckfessor-btn span,
+.strokologist-btn span {
+  position: relative;
+  display: inline-block;
+}
+
+.puckfessor-btn::after {
+  content: '🏒';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.8rem;
+}
+
+.strokologist-btn::after {
+  content: '⛳';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.8rem;
 }
 
 @media (max-width: 768px) {
@@ -278,6 +314,12 @@ h3 {
   max-width: 320px;
 }
 
+.home-card {
+  min-width: 100%;
+  max-width: 100%;
+  padding: 0;
+}
+
 .article-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
@@ -290,6 +332,19 @@ h3 {
   border-radius: 8px;
   background-color: #f6e5b5;
   margin-bottom: 0.5rem;
+}
+
+.home-card img {
+  height: 350px;
+}
+
+.home-card h3,
+.home-card p {
+  padding: 0 1rem;
+}
+
+.home-card h3 {
+  padding-top: 1rem;
 }
 
 .article-card h3 {
