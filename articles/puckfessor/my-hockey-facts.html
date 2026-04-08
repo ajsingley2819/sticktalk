@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Favorite Hockey Facts - The Puckfessor - Stick Talk</title>
+  <link rel="stylesheet" href="../../styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Playfair+Display&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+  <style>
+    .article-body {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 2.5rem 2rem;
+      background: white;
+      position: relative;
+      z-index: 2;
+      min-height: 70vh;
+    }
+
+    .article-body h1 {
+      color: #3c2b1d;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      margin-bottom: 0.4rem;
+      line-height: 1.25;
+    }
+
+    .article-meta {
+      color: #999;
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid #d1a338;
+    }
+
+    .article-body p {
+      line-height: 1.85;
+      color: #444;
+      margin-bottom: 1.3rem;
+      font-size: 1rem;
+    }
+
+    .article-body h2 {
+      color: #3c2b1d;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      margin: 2.5rem 0 0.8rem;
+      border-left: 4px solid #d1a338;
+      padding-left: 0.75rem;
+    }
+
+    .article-body h3 {
+      color: #3c2b1d;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      margin: 1.8rem 0 0.5rem;
+    }
+
+    .pull-quote {
+      border-left: 4px solid #872e24;
+      margin: 2rem 0;
+      padding: 1rem 1.5rem;
+      background: #fff6da;
+      font-style: italic;
+      font-size: 1.15rem;
+      color: #3c2b1d;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .pull-quote cite {
+      display: block;
+      margin-top: 0.5rem;
+      font-size: 0.85rem;
+      color: #872e24;
+      font-style: normal;
+      font-weight: 600;
+    }
+
+    .intro-callout {
+      background: linear-gradient(135deg, #e8f0e8, #d4e8d4);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border: 1px solid #4a7c59;
+    }
+
+    .intro-callout p {
+      margin: 0;
+      color: #2d4a2d;
+    }
+
+    .hate-card {
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      margin: 1rem 0;
+      border-left: 5px solid #872e24;
+      background: #fff0f0;
+    }
+
+    .hate-card h3 {
+      margin: 0 0 0.4rem 0;
+      color: #872e24;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+    }
+
+    .hate-card p {
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    .penguin-box {
+      background: linear-gradient(135deg, #0a0a0a, #1c1c3a);
+      color: #f0f0f0;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border: 2px solid #CFC493;
+    }
+
+    .penguin-box h3 {
+      color: #CFC493;
+      font-family: 'Playfair Display', serif;
+      margin: 0 0 0.6rem 0;
+      font-size: 1.2rem;
+    }
+
+    .penguin-box p {
+      color: #ddd;
+      margin: 0;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .cap-explainer {
+      background: #f6e5b5;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border: 1px solid #d1a338;
+    }
+
+    .cap-explainer h3 {
+      color: #3c2b1d;
+      margin: 0 0 0.75rem 0;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .cap-explainer .cap-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.4rem 0;
+      border-bottom: 1px solid #e8d08a;
+      font-size: 0.92rem;
+    }
+
+    .cap-explainer .cap-row:last-child {
+      border-bottom: none;
+      font-weight: 700;
+      color: #872e24;
+    }
+
+    .cap-explainer .cap-row span {
+      color: #3c2b1d;
+    }
+
+    .footnote-section {
+      margin-top: 3rem;
+      padding-top: 1rem;
+      border-top: 1px solid #ddd;
+    }
+
+    .footnote-section p {
+      font-size: 0.82rem;
+      color: #888;
+      margin-bottom: 0.4rem;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 600px) {
+      .article-body {
+        padding: 1.5rem 1rem;
+      }
+      .article-body h1 {
+        font-size: 1.7rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="grass-container" aria-hidden="true"></div>
+  <div class="snowflakes" aria-hidden="true">
+    <span class="snowflake">❄</span>
+    <span class="snowflake">❅</span>
+    <span class="snowflake">❆</span>
+    <span class="snowflake">❄</span>
+    <span class="snowflake">❅</span>
+    <span class="snowflake">❆</span>
+    <span class="snowflake">❄</span>
+    <span class="snowflake">❅</span>
+    <span class="snowflake">❆</span>
+    <span class="snowflake">❄</span>
+    <span class="snowflake">❅</span>
+    <span class="snowflake">❆</span>
+    <span class="snowflake">❄</span>
+    <span class="snowflake">❅</span>
+    <span class="snowflake">❆</span>
+    <span class="snowflake">❄</span>
+    <span class="snowflake">❅</span>
+    <span class="snowflake">❆</span>
+    <span class="snowflake">❄</span>
+    <span class="snowflake">❅</span>
+  </div>
+
+  <header>
+    <h1 class="banner-text">Stick Talk</h1>
+    <nav class="main-nav">
+      <a href="../../index.html" class="nav-link">Home</a>
+      <a href="../puckfessor-articles.html" class="nav-link active">The Puckfessor</a>
+      <a href="../strokologist-articles.html" class="nav-link">Dr. Strokologist</a>
+    </nav>
+  </header>
+
+  <main class="article-body">
+    <a href="../puckfessor-articles.html" class="back-button">← Back to Articles</a>
+
+    <h1>My Favorite Hockey Facts: A Personal Manifesto from the Desk of The Puckfessor</h1>
+    <p class="article-meta">By The Puckfessor &nbsp;|&nbsp; April 8, 2026 &nbsp;|&nbsp; Est. reading time: 7 minutes</p>
+
+    <div class="intro-callout">
+      <p><em>People ask me all the time — well, not all the time, but at least twice, including once by a man in a parking garage who may have been asking something else entirely — "Puckfessor, what do you actually believe about hockey?" Today, I answer that question. Formally. In writing. With subheadings.</em></p>
+    </div>
+
+    <p>I have spent a considerable portion of my adult life watching, analyzing, arguing about, and occasionally yelling at the television over the sport of hockey. I have opinions. I have allegiances. I have enemies — not personal enemies, mostly just teams — and I have a deep, abiding fascination with a topic that most people's eyes glaze over at the mere mention of: the NHL salary cap.</p>
+
+    <p>Consider this article my academic record. My curriculum vitae of hockey conviction. If you want to understand The Puckfessor, you must first understand what he loves, what he is learning, and what teams he would like to see fall directly into the Allegheny River.</p>
+
+    <p>Let us begin.</p>
+
+    <h2>Fact #1: My Favorite Team Is the Pittsburgh Penguins, and I Will Not Be Taking Questions</h2>
+
+    <p>Some people choose their favorite hockey team the way they choose a sandwich — whatever is closest, whatever requires the least effort, whatever everyone else seems to be having. I did not do this. I chose the Pittsburgh Penguins because the Pittsburgh Penguins are, objectively and without meaningful dispute, one of the most historically significant franchises in the history of the National Hockey League.</p>
+
+    <div class="penguin-box">
+      <h3>Why the Penguins, You Ask?</h3>
+      <p>Five Stanley Cup championships. The 1984 draft lottery that landed Mario Lemieux. A decade of Sidney Crosby. Evgeni Malkin, the most underrated superstar of his generation, doing things with a hockey stick that border on geometry violations. The 2016 and 2017 back-to-back Cup runs. Pittsburgh, a city that takes its hockey with the same seriousness it takes its pierogies — which is to say, with enormous passion and a complete disregard for anyone who does not share the obsession.</p>
+    </div>
+
+    <p>Mario Lemieux — "Le Magnifique" — played through Hodgkin's disease, a bad back, and roughly thirty years of the Penguins being financially insolvent, and still put up numbers that make statisticians weep with gratitude. He then bought the team. He <em>bought the team.</em> If that is not the act of a man who cares more about hockey than literally anything else, then The Puckfessor does not know what is.</p>
+
+    <p>Sidney Crosby arrived in 2005 as the most anticipated draft pick in a generation. He has delivered on that promise so thoroughly and so consistently that it sometimes feels surreal. Three Cups. Multiple Hart Trophies. A career that, when it eventually ends, will produce a Hall of Fame induction speech that makes grown men cry in arena parking lots across North America.</p>
+
+    <div class="pull-quote">
+      "Being a Penguins fan is not merely a preference. It is a posture. A worldview. A commitment to excellence that you carry into every rink, every argument, and every moment some Flyers fan opens his mouth within earshot."
+      <cite>— The Puckfessor, making a point that needed to be made</cite>
+    </div>
+
+    <p>The Penguins have been a dynasty. They have been a disaster. They have been everything in between. And through all of it, The Puckfessor has watched, believed, and renewed his faith every October when the puck drops and Pittsburgh takes the ice.</p>
+
+    <h2>Fact #2: The Salary Cap Is the Most Fascinating Thing in Hockey and I Will Die on This Hill</h2>
+
+    <p>I understand that mentioning the salary cap at a dinner party will cause most people to immediately develop a fictional prior commitment and excuse themselves from the room. That is their loss. Because the NHL salary cap — formally known as the Upper Limit of the NHL's Upper and Lower Limit system under the Collective Bargaining Agreement — is genuinely one of the most interesting management puzzles in professional sports, and I will not stop talking about it.</p>
+
+    <p>Here is the basic structure, explained by The Puckfessor at a pace suitable for humans:</p>
+
+    <div class="cap-explainer">
+      <h3>The Salary Cap, Briefly Explained</h3>
+      <div class="cap-row">
+        <span>What it is:</span>
+        <span>A hard ceiling on total player salary per team per season</span>
+      </div>
+      <div class="cap-row">
+        <span>How it's set:</span>
+        <span>Based on league-wide revenues (Hockey Related Revenue, or HRR)</span>
+      </div>
+      <div class="cap-row">
+        <span>Why it exists:</span>
+        <span>To prevent large-market teams from simply buying championships</span>
+      </div>
+      <div class="cap-row">
+        <span>What it creates:</span>
+        <span>Impossible decisions, creative contract structures, and general chaos</span>
+      </div>
+      <div class="cap-row">
+        <span>2024–25 cap ceiling:</span>
+        <span>$88 million USD</span>
+      </div>
+    </div>
+
+    <p>Every NHL general manager is, at all times, playing a kind of chess game with money that would make a hedge fund manager sweat. You have $88 million to spend. You need a goaltender, two shutdown defensemen, a top-line center, wingers, depth forwards, and a fourth line that can eat minutes without embarrassing the franchise. You also have existing contracts signed years ago, some of which are now a fiscal albatross around the organization's neck.</p>
+
+    <p>This is where it gets beautiful. Teams use tools like front-loaded contracts, signing bonuses, and performance bonuses to structure deals in ways that technically stay under the cap while maximizing the player's actual take-home pay. Some deals include no-trade clauses, no-movement clauses, modified no-trade lists — a whole legal apparatus of player protection that general managers must navigate like a minefield in skates.</p>
+
+    <h3>The Dead Cap: Hockey's Most Haunting Concept</h3>
+
+    <p>Perhaps the most punishing feature of the salary cap system is what happens when you buy out a player's contract or trade them while retaining salary. A portion of their cap hit can remain on your books — sometimes for years — even after they've left. This is called "dead cap space." You are paying, in cap terms, for a player who is not on your team. It is the contractual equivalent of a bad tattoo: you're reminded of it constantly, it affects how people see you, and there's no quick fix.</p>
+
+    <p>The Pittsburgh Penguins, for the record, have navigated the salary cap with varying degrees of success over the years. The Crosby-Malkin era required enormous creativity from general management — you simply do not get to keep two top-five players in the league on your roster without making painful decisions everywhere else. Every year, a beloved Penguin departs because the numbers simply do not work. Every year, The Puckfessor accepts this with the stoic resignation of a man who has read too many capfriendly.com deep dives at midnight.</p>
+
+    <p>It is, all things considered, endlessly compelling. And if you disagree, I respectfully invite you to explain why without using the phrase "it's just spreadsheet stuff," because it is not just spreadsheet stuff, it is the entire strategic soul of franchise management, and I will be here all night.</p>
+
+    <h2>Fact #3: My Most Hated Teams, Ranked and Annotated</h2>
+
+    <p>The Puckfessor is a man of passion. That passion does not flow only in the direction of love and admiration. There are teams in this league that have earned, through years of sustained irritation, a place on my permanent enemies list. I present them now, with full academic rigor:</p>
+
+    <div class="hate-card">
+      <h3>#1 — Philadelphia Flyers</h3>
+      <p>The rivalry between Pittsburgh and Philadelphia is older than the careers of everyone currently playing for either team and roughly as civil as a parking dispute. The Flyers exist, from a Penguins fan's perspective, as a recurring antagonist in a very long story. They are loud, they are physical, their fans are committed in a way that borders on clinically interesting, and The Puckfessor respects none of this while acknowledging all of it. The Broad Street Bullies legacy means Flyers teams are always a bit more aggressive than strictly necessary. This is not a compliment. They are, and shall remain, Enemy Number One.</p>
+    </div>
+
+    <div class="hate-card">
+      <h3>#2 — Washington Capitals</h3>
+      <p>The Capitals were, for many years, the team standing between Pittsburgh and the Stanley Cup. They had Alexander Ovechkin — one of the greatest goal scorers in the history of the sport — and a supporting cast good enough to make the Pens' playoff life genuinely miserable on multiple occasions. The Puckfessor has respect for Ovechkin as a player and as a generational talent. He has considerably less respect for the years of heartbreak his team inflicted upon Pittsburgh before the Penguins finally started returning the favor. The wounds are old. They do not fully close.</p>
+    </div>
+
+    <div class="hate-card">
+      <h3>#3 — New York Islanders</h3>
+      <p>The Islanders have done less direct damage to the Penguins than the previous two entries, which means my animosity here is somewhat more philosophical in nature. They had their dynasty in the early 1980s — four consecutive Stanley Cups — and have spent much of the subsequent four decades reminding everyone about it. This is understandable. It is also tiresome. Additionally, and The Puckfessor will not be elaborating further, something happened in a playoff series that he would prefer not to revisit in detail. They are on the list. They will remain on the list.</p>
+    </div>
+
+    <p>There you have it. Three teams. Three distinct flavors of displeasure. Each one filed carefully in the part of The Puckfessor's brain reserved for things that make playoff hockey meaningful — because you cannot fully appreciate a Pittsburgh victory without knowing exactly who they've beaten.</p>
+
+    <h2>In Conclusion: These Are My Hockey Facts</h2>
+
+    <p>I started this article promising facts, and I have delivered them: the Penguins are the team, the salary cap is the obsession, and the Flyers, Capitals, and Islanders are the opposition. These are not opinions dressed up as facts. These are facts that happen to align perfectly with my opinions, which is close enough.</p>
+
+    <p>If you take nothing else from this piece, take this: hockey rewards the curious. The more you learn about it — the systems, the history, the economics, the rivalries — the richer it becomes. The salary cap is not boring. The Penguins are not just a team. And the hatred of a divisional rival is not petty; it is the very connective tissue of what makes fandom meaningful.</p>
+
+    <p>Now if you'll excuse The Puckfessor, there is a capfriendly.com tab open on his browser that isn't going to read itself.</p>
+
+    <p><em>Class dismissed.</em></p>
+
+    <div class="footnote-section">
+      <p><sup>1</sup> "Favorite hocke facts" is how The Puckfessor originally titled his research notes for this piece. The typo has been preserved as a monument to the raw, unfiltered enthusiasm with which this institution approaches the sport.</p>
+      <p><sup>2</sup> The Puckfessor's views on the Flyers, Capitals, and Islanders are his own and do not constitute a formal academic finding, though he maintains they are well-supported by the available evidence.</p>
+      <p><sup>3</sup> No Penguins fans were harmed in the production of this article. Several Flyers fans were mildly inconvenienced, which is considered acceptable.</p>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Stick Talk - Where hockey meets laughs</p>
+    <p><a href="../../index.html">Back to Home</a></p>
+  </footer>
+
+  <script src="../../grass.js"></script>
+</body>
+</html>
