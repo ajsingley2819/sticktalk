@@ -1,36 +1,36 @@
-// Dynamically generate a large number of grass blades for performance and maintainability
+// Generate grass blades with a traveling wind-wave effect
 (function() {
-  // Use 300 blades for mobile (<=600px), 1100 for desktop
   const isMobile = window.innerWidth <= 600;
-  const NUM_BLADES = isMobile ? 300 : 1100;
+  const NUM_BLADES = isMobile ? 250 : 1000;
   const grassContainer = document.querySelector('.grass-container');
   if (!grassContainer) return;
 
-  // 12 unique blade SVG path templates (with placeholders for Q control points)
-  const bladeTemplates = [
-    {stroke: '#4a7c59', qx: 7, qy: 36},
-    {stroke: '#7bb661', qx: 3, qy: 36},
-    {stroke: '#4a7c59', qx: 8, qy: 24},
-    {stroke: '#7bb661', qx: 2, qy: 24},
-    {stroke: '#4a7c59', qx: 6, qy: 54},
-    {stroke: '#7bb661', qx: 4, qy: 54},
-    {stroke: '#4a7c59', qx: 9, qy: 48},
-    {stroke: '#7bb661', qx: 1, qy: 48},
-    {stroke: '#4a7c59', qx: 8, qy: 63},
-    {stroke: '#7bb661', qx: 2, qy: 63},
-    {stroke: '#4a7c59', qx: 5, qy: 44},
-    {stroke: '#7bb661', qx: 5, qy: 24}
+  const colors = [
+    '#4a7c59', '#5a8f69', '#3d6b4a', '#7bb661',
+    '#6aaa50', '#3a6040', '#8fcc70', '#4e8a5e'
   ];
 
-  const maxHeight = 108; // All blades start at y = maxHeight (taller)
   let bladesHtml = '';
   for (let i = 0; i < NUM_BLADES; i++) {
-    // Randomize tip height between 0 and 44 for natural variation (taller range)
-    const tipY = Math.floor(Math.random() * 45); // 0-44 px from the top
-    const t = bladeTemplates[i % 12];
-    // Path starts at (5, maxHeight), curves to (t.qx, t.qy + tipY), ends at (5, tipY)
-    const svg = `<svg viewBox="0 0 10 ${maxHeight}"><path d="M5 ${maxHeight} Q${t.qx} ${t.qy + tipY} 5 ${tipY} T5 ${tipY}" stroke="${t.stroke}" stroke-width="2" fill="none"/></svg>`;
-    bladesHtml += `<span class="blade">${svg}</span>`;
+    const color = colors[Math.floor(Math.random() * colors.length)];
+
+    // Blade height: 60-110px, rooted at the bottom of the container
+    const bladeH = Math.floor(Math.random() * 50) + 60;
+
+    // Tip position: upper 10-55% of the blade height
+    const tipY = Math.floor(bladeH * (0.10 + Math.random() * 0.45));
+
+    // Control point: pulls the curve left or right for natural lean
+    const qx = (Math.random() * 10) + 1;   // 1-11
+    const qy = Math.floor(tipY + (bladeH - tipY) * 0.5);
+
+    // Traveling wave: delay increases left→right so wind ripples across
+    const waveDelay = ((i / NUM_BLADES) * 3.5 + (Math.random() * 0.4 - 0.2)).toFixed(2);
+    const duration  = (2.5 + Math.random() * 1.5).toFixed(2);
+
+    const svg = `<svg viewBox="0 0 12 ${bladeH}" preserveAspectRatio="none"><path d="M6 ${bladeH} Q${qx} ${qy} 6 ${tipY}" stroke="${color}" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg>`;
+    bladesHtml += `<span class="blade" style="height:${bladeH}px;animation-delay:${waveDelay}s;animation-duration:${duration}s">${svg}</span>`;
   }
+
   grassContainer.innerHTML = bladesHtml;
 })();
