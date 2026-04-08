@@ -7,41 +7,19 @@
   <link rel="stylesheet" href="../styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Playfair+Display&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
   <style>
-    .loading {
-      text-align: center;
-      padding: 2rem;
-      color: #666;
-    }
-
-    .spinner {
-      border: 3px solid #f3f3f3;
-      border-top: 3px solid #4a7c59;
-      border-radius: 50%;
-      width: 30px;
-      height: 30px;
-      animation: spin 1s linear infinite;
-      margin: 0 auto 1rem;
-    }
-
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    .firebase-article {
+    .article-item {
       background: white;
       padding: 1.5rem;
       border-radius: 10px;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
       transition: all 0.3s ease;
-      text-decoration: none;
       color: #3c2b1d;
       display: flex;
       flex-direction: column;
       gap: 1rem;
     }
 
-    .firebase-article:hover {
+    .article-item:hover {
       transform: translateY(-4px);
       box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
     }
@@ -59,38 +37,40 @@
       font-size: 0.95rem;
     }
 
-    .article-meta {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
+    .article-date {
       font-size: 0.85rem;
       color: #999;
-      margin-top: 0.5rem;
+      margin: 0;
     }
 
-    .article-meta span {
-      display: flex;
-      align-items: center;
-      gap: 0.3rem;
-    }
-
-    .download-btn {
+    .read-btn {
       display: inline-block;
       padding: 0.6rem 1.2rem;
       background-color: #4a7c59;
       color: white;
-      border: none;
       border-radius: 5px;
       text-decoration: none;
       font-weight: 600;
-      cursor: pointer;
       transition: all 0.3s ease;
-      text-align: center;
       width: fit-content;
     }
 
-    .download-btn:hover {
+    .read-btn:hover {
       background-color: #2d5a3d;
+    }
+
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .no-articles {
+      text-align: center;
+      padding: 3rem;
+      color: #999;
+      font-size: 1.1rem;
+      grid-column: 1 / -1;
     }
   </style>
 </head>
@@ -131,7 +111,7 @@
   <main style="padding: 2rem; background-color: #fff; position: relative; z-index: 2; min-height: 70vh;">
     <section style="max-width: 1200px; margin: 0 auto;">
       <a href="../index.html" class="back-button">← Back to Home</a>
-      
+
       <div style="display: flex; align-items: center; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap;">
         <img src="../assets/upd_puck.png" alt="The Puckfessor" style="width: 200px; height: 200px; object-fit: cover; border-radius: 10px;">
         <div>
@@ -142,18 +122,28 @@
       </div>
 
       <h2 style="border-bottom: 2px solid #d1a338; padding-bottom: 0.5rem; margin: 3rem 0 2rem 0;">Latest Articles</h2>
-      
-      <div id="loading" class="loading">
-        <div class="spinner"></div>
-        <p>Loading articles...</p>
-      </div>
 
-      <div id="puckfessor-articles" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2rem;">
-        <!-- Articles will be loaded here by Firebase -->
-      </div>
+      <div class="articles-grid">
 
-      <div id="no-articles" style="text-align: center; padding: 3rem; display: none;">
-        <p style="font-size: 1.1rem; color: #999;">No articles yet. Check back soon!</p>
+        <!-- ============================================================
+             TO ADD A NEW ARTICLE:
+             1. Copy article-template.html into the puckfessor/ folder
+             2. Rename it and write your content
+             3. Copy the card block below, paste it above this comment,
+                and fill in the title, description, date, and filename
+             ============================================================
+
+        <div class="article-item">
+          <h3 class="article-title">Your Article Title</h3>
+          <p class="article-description">A short description of the article.</p>
+          <p class="article-date">April 7, 2026</p>
+          <a href="puckfessor/your-filename.html" class="read-btn">Read Article</a>
+        </div>
+
+        -->
+
+        <p class="no-articles">No articles yet. Check back soon!</p>
+
       </div>
     </section>
   </main>
@@ -163,71 +153,6 @@
     <p><a href="../index.html">Back to Home</a></p>
   </footer>
 
-  <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-auth-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore-compat.js"></script>
   <script src="../grass.js"></script>
-  <script src="../firebase-config.js"></script>
-  
-  <script>
-    // Load Puckfessor articles from Firebase
-    async function loadArticles() {
-      try {
-        const articlesContainer = document.getElementById('puckfessor-articles');
-        const loading = document.getElementById('loading');
-        const noArticlesMsg = document.getElementById('no-articles');
-
-        // Query Firestore for puckfessor articles
-        const db = firebase.firestore();
-        const query = db.collection('articles')
-          .where('category', '==', 'puckfessor')
-          .orderBy('createdAt', 'desc');
-
-        const snapshot = await query.get();
-
-        loading.style.display = 'none';
-
-        if (snapshot.empty) {
-          noArticlesMsg.style.display = 'block';
-          return;
-        }
-
-        articlesContainer.innerHTML = '';
-
-        snapshot.forEach((doc) => {
-          const article = doc.data();
-          const date = article.createdAt.toDate().toLocaleDateString('en-US', {
-            year: 'numeric',
-            month: 'short',
-            day: 'numeric'
-          });
-
-          const articleDiv = document.createElement('div');
-          articleDiv.className = 'firebase-article';
-          
-          const author = article.author ? article.author.split('@')[0] : 'Anonymous';
-          
-          articleDiv.innerHTML = `
-            <h3 class="article-title">${article.title}</h3>
-            <p class="article-description">${article.description}</p>
-            <div class="article-meta">
-              <span>📅 ${date}</span>
-              <span>✍️ ${author}</span>
-            </div>
-            <a href="${article.fileUrl}" download class="download-btn">📥 Download Document</a>
-          `;
-
-          articlesContainer.appendChild(articleDiv);
-        });
-
-      } catch (error) {
-        console.error('Error loading articles:', error);
-        document.getElementById('loading').innerHTML = '<p style="color: red;">Error loading articles. Please try again later.</p>';
-      }
-    }
-
-    // Load articles when page loads
-    loadArticles();
-  </script>
 </body>
 </html>
