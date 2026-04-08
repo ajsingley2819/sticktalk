@@ -6,6 +6,93 @@
   <title>Dr. Strokologist - Stick Talk</title>
   <link rel="stylesheet" href="../styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Playfair+Display&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+  <style>
+    .loading {
+      text-align: center;
+      padding: 2rem;
+      color: #666;
+    }
+
+    .spinner {
+      border: 3px solid #f3f3f3;
+      border-top: 3px solid #8b6e47;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 1rem;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .firebase-article {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      text-decoration: none;
+      color: #3c2b1d;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .firebase-article:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .article-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #3c2b1d;
+      margin: 0;
+    }
+
+    .article-description {
+      color: #666;
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    .article-meta {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      font-size: 0.85rem;
+      color: #999;
+      margin-top: 0.5rem;
+    }
+
+    .article-meta span {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .download-btn {
+      display: inline-block;
+      padding: 0.6rem 1.2rem;
+      background-color: #8b6e47;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-align: center;
+      width: fit-content;
+    }
+
+    .download-btn:hover {
+      background-color: #6b5435;
+    }
+  </style>
 </head>
 <body>
   <div class="grass-container" aria-hidden="true"></div>
@@ -41,23 +128,28 @@
     </nav>
   </header>
 
-  <main style="padding: 2rem; background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c8 100%); position: relative; z-index: 2; min-height: 70vh;">
+  <main style="padding: 2rem; background-color: #fff; position: relative; z-index: 2; min-height: 70vh;">
     <section style="max-width: 1200px; margin: 0 auto;">
       <a href="../index.html" class="back-button">← Back to Home</a>
       
       <div style="display: flex; align-items: center; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap;">
-        <img src="../assets/upd_stroke.png" alt="Dr. Strokologist" style="width: 200px; height: 200px; object-fit: cover; border-radius: 10px;">
+        <img src="../assets/upd_golf.png" alt="Dr. Strokologist" style="width: 200px; height: 200px; object-fit: cover; border-radius: 10px;">
         <div>
           <h1 style="margin: 0 0 0.5rem 0; color: #3c2b1d;">Dr. Strokologist</h1>
-          <p style="font-size: 1.2rem; color: #872e24; margin: 0 0 0.5rem 0; font-weight: 600;">King of Lag</p>
-          <p style="color: #666; margin: 0;">Golf expertise, lag putting, tempo control, and short game mastery from Dr. Strokologist.</p>
+          <p style="font-size: 1.2rem; color: #8b6e47; margin: 0 0 0.5rem 0; font-weight: 600;">Medical Doctor of Swing</p>
+          <p style="color: #666; margin: 0;">Golf wisdom, swing mechanics, and on-course strategy from Dr. Strokologist.</p>
         </div>
       </div>
 
-      <h2 style="border-bottom: 2px solid #4a7c59; padding-bottom: 0.5rem; margin: 3rem 0 2rem 0; color: #3c2b1d;">Latest Articles</h2>
+      <h2 style="border-bottom: 2px solid #d1a338; padding-bottom: 0.5rem; margin: 3rem 0 2rem 0;">Latest Articles</h2>
       
-      <div id="strokologist-articles" class="articles" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2rem;">
-        <!-- Articles will be loaded here by JavaScript -->
+      <div id="loading" class="loading">
+        <div class="spinner"></div>
+        <p>Loading articles...</p>
+      </div>
+
+      <div id="strokologist-articles" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2rem;">
+        <!-- Articles will be loaded here by Firebase -->
       </div>
 
       <div id="no-articles" style="text-align: center; padding: 3rem; display: none;">
@@ -71,53 +163,71 @@
     <p><a href="../index.html">Back to Home</a></p>
   </footer>
 
+  <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js"></script>
   <script src="../grass.js"></script>
+  <script src="../firebase-config.js"></script>
+  
   <script>
-    // Load Strokologist articles
-    (async function() {
-      const articlesContainer = document.getElementById('strokologist-articles');
-      const noArticlesMsg = document.getElementById('no-articles');
-      
-      const strokologistArticles = [
-        {
-          title: 'Mastering the Short Game',
-          file: 'sample-golf.html',
-          description: 'A deep dive into lag putting and tempo control.'
-        },
-        {
-          title: 'The Open Preview',
-          file: 'strokologist/TheOpenPreview_71625_.html',
-          description: 'Dr. Strokologist\'s expert analysis of The Open Championship.'
+    // Load Strokologist articles from Firebase
+    async function loadArticles() {
+      try {
+        const articlesContainer = document.getElementById('strokologist-articles');
+        const loading = document.getElementById('loading');
+        const noArticlesMsg = document.getElementById('no-articles');
+
+        // Query Firestore for strokologist articles
+        const db = firebase.firestore();
+        const query = db.collection('articles')
+          .where('category', '==', 'strokologist')
+          .orderBy('createdAt', 'desc');
+
+        const snapshot = await query.get();
+
+        loading.style.display = 'none';
+
+        if (snapshot.empty) {
+          noArticlesMsg.style.display = 'block';
+          return;
         }
-      ];
 
-      let articlesFound = 0;
+        articlesContainer.innerHTML = '';
 
-      for (const article of strokologistArticles) {
-        try {
-          const res = await fetch(article.file);
-          if (!res.ok) continue;
+        snapshot.forEach((doc) => {
+          const article = doc.data();
+          const date = article.createdAt.toDate().toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric'
+          });
 
-          const card = document.createElement('a');
-          card.className = 'article-card golf-link';
-          card.href = article.file;
-          card.style.maxWidth = 'none';
-          card.style.marginBottom = '0';
-          card.innerHTML = `
-            <h3>${article.title}</h3>
-            <p>${article.description}</p>
+          const articleDiv = document.createElement('div');
+          articleDiv.className = 'firebase-article';
+          
+          const author = article.author ? article.author.split('@')[0] : 'Anonymous';
+          
+          articleDiv.innerHTML = `
+            <h3 class="article-title">${article.title}</h3>
+            <p class="article-description">${article.description}</p>
+            <div class="article-meta">
+              <span>📅 ${date}</span>
+              <span>✍️ ${author}</span>
+            </div>
+            <a href="${article.fileUrl}" download class="download-btn">📥 Download Document</a>
           `;
-          articlesContainer.appendChild(card);
-          articlesFound++;
-        } catch (e) {
-          // Ignore missing files
-        }
-      }
 
-      if (articlesFound === 0) {
-        noArticlesMsg.style.display = 'block';
+          articlesContainer.appendChild(articleDiv);
+        });
+
+      } catch (error) {
+        console.error('Error loading articles:', error);
+        document.getElementById('loading').innerHTML = '<p style="color: red;">Error loading articles. Please try again later.</p>';
       }
-    })();
+    }
+
+    // Load articles when page loads
+    loadArticles();
   </script>
 </body>
 </html>

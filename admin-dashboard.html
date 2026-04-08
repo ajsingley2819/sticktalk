@@ -276,7 +276,7 @@
       <section class="content-section active" id="upload">
         <h2>Upload New Article</h2>
         <div class="upload-form">
-          <div class="success-message" id="successMessage">Article uploaded successfully!</div>
+          <div class="success-message" id="successMessage">Article saved successfully!</div>
           <div class="error-message" id="errorMessage"></div>
 
           <form id="articleForm">
@@ -301,11 +301,11 @@
             </div>
 
             <div class="form-group">
-              <label for="file">Upload Word Document (.docx or .doc)</label>
-              <input type="file" id="file" accept=".doc,.docx" required>
+              <label for="articleLink">Article Link (Google Doc, PDF, or any URL)</label>
+              <input type="url" id="articleLink" required placeholder="https://...">
             </div>
 
-            <button type="submit" class="submit-btn">Upload Article</button>
+            <button type="submit" class="submit-btn">Save Article</button>
           </form>
         </div>
       </section>
@@ -331,7 +331,6 @@
 
   <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-storage.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js"></script>
   <script src="firebase-config.js"></script>
 
@@ -391,14 +390,14 @@
       }
     });
 
-    // Article upload
+    // Article submit
     document.getElementById('articleForm').addEventListener('submit', async (e) => {
       e.preventDefault();
 
       const title = document.getElementById('title').value;
       const category = document.getElementById('category').value;
       const description = document.getElementById('description').value;
-      const file = document.getElementById('file').files[0];
+      const articleLink = document.getElementById('articleLink').value;
 
       const successMsg = document.getElementById('successMessage');
       const errorMsg = document.getElementById('errorMessage');
@@ -407,31 +406,15 @@
       successMsg.style.display = 'none';
       errorMsg.style.display = 'none';
 
-      if (!file) {
-        errorMsg.textContent = 'Please select a file';
-        errorMsg.style.display = 'block';
-        return;
-      }
-
       try {
         submitBtn.disabled = true;
-        submitBtn.textContent = 'Uploading...';
+        submitBtn.textContent = 'Saving...';
 
-        // Upload file to Firebase Storage
-        const storageRef = firebase.storage().ref();
-        const fileRef = storageRef.child(`articles/${category}/${Date.now()}_${file.name}`);
-        
-        const uploadTask = await fileRef.put(file);
-        const downloadURL = await uploadTask.ref.getDownloadURL();
-
-        // Save article metadata to Firestore
-        const articlesCollection = firebase.firestore().collection('articles');
-        const docRef = await articlesCollection.add({
+        await firebase.firestore().collection('articles').add({
           title: title,
           description: description,
           category: category,
-          fileUrl: downloadURL,
-          fileName: file.name,
+          fileUrl: articleLink,
           author: currentUser.email,
           authorType: userType,
           createdAt: new Date(),
@@ -441,18 +424,15 @@
         successMsg.style.display = 'block';
         document.getElementById('articleForm').reset();
         submitBtn.disabled = false;
-        submitBtn.textContent = 'Upload Article';
+        submitBtn.textContent = 'Save Article';
 
-        // Reload articles
-        setTimeout(() => {
-          loadUserArticles();
-        }, 1000);
+        setTimeout(() => loadUserArticles(), 1000);
 
       } catch (error) {
-        errorMsg.textContent = 'Upload failed: ' + error.message;
+        errorMsg.textContent = 'Error saving article: ' + error.message;
         errorMsg.style.display = 'block';
         submitBtn.disabled = false;
-        submitBtn.textContent = 'Upload Article';
+        submitBtn.textContent = 'Save Article';
       }
     });
 
