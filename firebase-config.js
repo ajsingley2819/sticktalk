@@ -12,11 +12,3 @@ const firebaseConfig = {
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-
-// Get references to Firebase services
-const auth = firebase.auth();
-const storage = firebase.storage();
-const db = firebase.firestore();
-
-// Export for use in other files
-export { auth, storage, db };
