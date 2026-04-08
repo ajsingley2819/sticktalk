@@ -1,7 +1,7 @@
 // Generate grass blades with a traveling wind-wave effect
 (function() {
   const isMobile = window.innerWidth <= 600;
-  const NUM_BLADES = isMobile ? 450 : 1600;
+  const NUM_BLADES = isMobile ? 700 : 2600;
   const grassContainer = document.querySelector('.grass-container');
   if (!grassContainer) return;
 
@@ -14,8 +14,8 @@
   for (let i = 0; i < NUM_BLADES; i++) {
     const color = colors[Math.floor(Math.random() * colors.length)];
 
-    // Blade height: 35-65px, rooted at the bottom of the container
-    const bladeH = Math.floor(Math.random() * 30) + 35;
+    // Blade height: 20-40px, rooted at the bottom of the container
+    const bladeH = Math.floor(Math.random() * 20) + 20;
 
     // Tip position: upper 10-55% of the blade height
     const tipY = Math.floor(bladeH * (0.10 + Math.random() * 0.45));

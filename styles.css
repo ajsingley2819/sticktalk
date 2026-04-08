@@ -202,7 +202,7 @@ header .banner-text {
   left: 0;
   bottom: 0;
   width: 100vw;
-  height: 70px;
+  height: 50px;
   z-index: 101;
   pointer-events: none;
   display: flex;
@@ -211,7 +211,7 @@ header .banner-text {
 
 .blade {
   flex-shrink: 0;
-  width: 9px;
+  width: 6px;
   margin: 0 -1px;
   display: inline-block;
   transform-origin: bottom center;
@@ -325,9 +325,12 @@ h3 {
   background-color: #f6e5b5;
 }
 
-.home-card h3,
-.home-card p {
+.home-card h3 {
   padding: 1rem 1rem 0 1rem;
+}
+
+.home-card p {
+  padding: 0.25rem 1rem 1.5rem 1rem;
 }
 
 .home-card h3 {
