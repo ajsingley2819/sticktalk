@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026 NHL Playoff Preview - The Puckfessor - Stick Talk</title>
+  <link rel="stylesheet" href="../../styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Playfair+Display&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+  <style>
+    .article-body {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 2.5rem 2rem;
+      background: white;
+      position: relative;
+      z-index: 2;
+      min-height: 70vh;
+    }
+
+    .article-body h1 {
+      color: #3c2b1d;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      margin-bottom: 0.4rem;
+      line-height: 1.25;
+    }
+
+    .article-meta {
+      color: #999;
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid #d1a338;
+    }
+
+    .article-body p {
+      line-height: 1.85;
+      color: #444;
+      margin-bottom: 1.3rem;
+      font-size: 1rem;
+    }
+
+    .article-body h2 {
+      color: #3c2b1d;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      margin: 2.5rem 0 0.8rem;
+      border-left: 4px solid #d1a338;
+      padding-left: 0.75rem;
+    }
+
+    .pull-quote {
+      border-left: 4px solid #872e24;
+      margin: 2rem 0;
+      padding: 1rem 1.5rem;
+      background: #fff6da;
+      font-style: italic;
+      font-size: 1.15rem;
+      color: #3c2b1d;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .pull-quote cite {
+      display: block;
+      margin-top: 0.5rem;
+      font-size: 0.85rem;
+      color: #872e24;
+      font-style: normal;
+      font-weight: 600;
+    }
+
+    /* Standings Table */
+    .standings-wrapper {
+      margin: 1.5rem 0 2rem;
+      overflow-x: auto;
+    }
+
+    .standings-wrapper h3 {
+      font-family: 'Playfair Display', serif;
+      color: #3c2b1d;
+      margin: 0 0 0.5rem 0;
+      font-size: 1.1rem;
+      letter-spacing: 0.02em;
+    }
+
+    .standings-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    .standings-table thead th {
+      background: #3c2b1d;
+      color: #fff6da;
+      padding: 0.55rem 0.75rem;
+      text-align: left;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      white-space: nowrap;
+    }
+
+    .standings-table thead th:not(:first-child) {
+      text-align: center;
+    }
+
+    .standings-table tbody tr {
+      border-bottom: 1px solid #eee;
+      transition: background 0.15s;
+    }
+
+    .standings-table tbody tr:hover {
+      background: #f6e5b5;
+    }
+
+    .standings-table tbody tr.division-header td {
+      background: #f0e8d0;
+      font-weight: 700;
+      color: #3c2b1d;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.75rem;
+    }
+
+    .standings-table tbody tr.playoff-line td {
+      border-bottom: 3px solid #d1a338;
+    }
+
+    .standings-table td {
+      padding: 0.55rem 0.75rem;
+      color: #333;
+    }
+
+    .standings-table td:not(:first-child) {
+      text-align: center;
+    }
+
+    .standings-table td.team-name {
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .standings-table td.pts {
+      font-weight: 700;
+      color: #3c2b1d;
+    }
+
+    .playoffs-note {
+      font-size: 0.78rem;
+      color: #888;
+      margin-top: 0.4rem;
+    }
+
+    /* Team blurb cards */
+    .team-blurb {
+      border-left: 4px solid #4a7c59;
+      background: #f9f9f9;
+      border-radius: 0 8px 8px 0;
+      padding: 1rem 1.25rem;
+      margin: 1.25rem 0;
+    }
+
+    .team-blurb .team-label {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: #3c2b1d;
+      margin-bottom: 0.4rem;
+    }
+
+    .team-blurb p {
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    .team-blurb.pens {
+      border-left-color: #CFC493;
+      background: #1c1c2e;
+    }
+
+    .team-blurb.pens .team-label,
+    .team-blurb.pens p {
+      color: #ddd;
+    }
+
+    .team-blurb.pens .team-label {
+      color: #CFC493;
+    }
+
+    @media (max-width: 600px) {
+      .article-body {
+        padding: 1.5rem 1rem;
+      }
+      .article-body h1 {
+        font-size: 1.7rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="grass-container" aria-hidden="true"></div>
+  <div class="snowflakes" aria-hidden="true">
+    <span class="snowflake">❄</span>
+    <span class="snowflake">❅</span>
+    <span class="snowflake">❆</span>
+    <span class="snowflake">❄</span>
+    <span class="snowflake">❅</span>
+    <span class="snowflake">❆</span>
+    <span class="snowflake">❄</span>
+    <span class="snowflake">❅</span>
+    <span class="snowflake">❆</span>
+    <span class="snowflake">❄</span>
+    <span class="snowflake">❅</span>
+    <span class="snowflake">❆</span>
+    <span class="snowflake">❄</span>
+    <span class="snowflake">❅</span>
+    <span class="snowflake">❆</span>
+    <span class="snowflake">❄</span>
+    <span class="snowflake">❅</span>
+    <span class="snowflake">❆</span>
+    <span class="snowflake">❄</span>
+    <span class="snowflake">❅</span>
+  </div>
+
+  <header>
+    <h1 class="banner-text">Stick Talk</h1>
+    <nav class="main-nav">
+      <a href="../../index.html" class="nav-link">Home</a>
+      <a href="../puckfessor-articles.html" class="nav-link active">The Puckfessor</a>
+      <a href="../strokologist-articles.html" class="nav-link">Dr. Strokologist</a>
+    </nav>
+  </header>
+
+  <main class="article-body">
+    <a href="../puckfessor-articles.html" class="back-button">← Back to Articles</a>
+
+    <h1>2026 NHL Playoff Preview</h1>
+    <p class="article-meta">By The Puckfessor &nbsp;|&nbsp; April 8, 2026 &nbsp;|&nbsp; Est. reading time: 6 minutes</p>
+
+    <p>Holy fuck, here we are again. The NHL playoffs are just about underway and what a sprint to the finish we have had. The West looking like a 98-lb. woman with double D's — it's so top heavy — and the East so deep you can fish in it. It's all coming out to be an incredible next ten days before the real show begins April 18th. Two very different tales, two very similar outcomes: <strong>Chaos.</strong> Chaos racing for the last spots in this year's playoff bracket. Welcome to The Puckfessor's pre-playoff preview.</p>
+
+    <h2>The East</h2>
+
+    <div class="standings-wrapper">
+      <h3>Eastern Conference Standings — April 8, 2026</h3>
+      <table class="standings-table">
+        <thead>
+          <tr>
+            <th>Team</th>
+            <th>GP</th>
+            <th>W</th>
+            <th>L</th>
+            <th>OTL</th>
+            <th>PTS</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="division-header">
+            <td colspan="6">Metropolitan Division</td>
+          </tr>
+          <tr class="playoff-line">
+            <td class="team-name">Carolina Hurricanes</td>
+            <td>78</td><td>50</td><td>22</td><td>6</td><td class="pts">106</td>
+          </tr>
+          <tr>
+            <td class="team-name">Pittsburgh Penguins</td>
+            <td>78</td><td>43</td><td>29</td><td>6</td><td class="pts">92</td>
+          </tr>
+          <tr>
+            <td class="team-name">Philadelphia Flyers</td>
+            <td>78</td><td>42</td><td>30</td><td>6</td><td class="pts">90</td>
+          </tr>
+          <tr>
+            <td class="team-name">Columbus Blue Jackets</td>
+            <td>78</td><td>40</td><td>33</td><td>5</td><td class="pts">85</td>
+          </tr>
+          <tr>
+            <td class="team-name">New York Islanders</td>
+            <td>78</td><td>40</td><td>35</td><td>3</td><td class="pts">83</td>
+          </tr>
+          <tr>
+            <td class="team-name">Washington Capitals</td>
+            <td>78</td><td>39</td><td>36</td><td>3</td><td class="pts">81</td>
+          </tr>
+          <tr>
+            <td class="team-name">New Jersey Devils</td>
+            <td>78</td><td>37</td><td>39</td><td>2</td><td class="pts">76</td>
+          </tr>
+          <tr>
+            <td class="team-name">New York Rangers</td>
+            <td>78</td><td>33</td><td>36</td><td>9</td><td class="pts">75</td>
+          </tr>
+
+          <tr class="division-header">
+            <td colspan="6">Atlantic Division</td>
+          </tr>
+          <tr class="playoff-line">
+            <td class="team-name">Tampa Bay Lightning</td>
+            <td>78</td><td>48</td><td>24</td><td>6</td><td class="pts">102</td>
+          </tr>
+          <tr>
+            <td class="team-name">Buffalo Sabres</td>
+            <td>78</td><td>47</td><td>23</td><td>8</td><td class="pts">102</td>
+          </tr>
+          <tr>
+            <td class="team-name">Montreal Canadiens</td>
+            <td>78</td><td>46</td><td>22</td><td>10</td><td class="pts">102</td>
+          </tr>
+          <tr>
+            <td class="team-name">Boston Bruins</td>
+            <td>78</td><td>45</td><td>27</td><td>6</td><td class="pts">96</td>
+          </tr>
+          <tr>
+            <td class="team-name">Ottawa Senators</td>
+            <td>78</td><td>42</td><td>30</td><td>6</td><td class="pts">90</td>
+          </tr>
+          <tr>
+            <td class="team-name">Detroit Red Wings</td>
+            <td>78</td><td>40</td><td>34</td><td>4</td><td class="pts">84</td>
+          </tr>
+          <tr>
+            <td class="team-name">Toronto Maple Leafs</td>
+            <td>78</td><td>35</td><td>38</td><td>5</td><td class="pts">75</td>
+          </tr>
+          <tr>
+            <td class="team-name">Florida Panthers</td>
+            <td>78</td><td>35</td><td>39</td><td>4</td><td class="pts">74</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="playoffs-note">Gold line = playoff cutoff. Regular season concludes April 16. Playoffs begin April 18.</p>
+    </div>
+
+    <div class="team-blurb">
+      <div class="team-label">Carolina Hurricanes — 1st East, 106 pts</div>
+      <p>As everyone expected, the Canes are atop the East and absolutely smothering teams. Copy and paste from last year and the year before. Regular season Eastern Conference champions — these fellas are built for the regular season. As a Pens fan with no aspirations for the Cup, just happy to be here, I'd be afraid to see them in the playoffs. If you are damn near anyone else, you'd welcome the chance to see them in any round.</p>
+    </div>
+
+    <div class="team-blurb">
+      <div class="team-label">Tampa Bay Lightning — 1st Atlantic, 102 pts</div>
+      <p>Another incredible year from Coop and the boys to keep their streak alive of "Are they dead yet? Nope." Just obliterating teams with sometimes a surprising loss that makes the whole league scratch their heads.</p>
+    </div>
+
+    <div class="team-blurb">
+      <div class="team-label">Buffalo Sabres — 2nd Atlantic, 102 pts</div>
+      <p>Buffalo. I will say it again. <em>Buffalo.</em> Holy shit, what a run. From the bottom of the barrel to the penthouse. These new-age Sabres are a legit treat to behold and they ain't taking shit from nobody. You want excitement? Put the Bills Mafia indoors and give them beer and Sabres hockey — that'd cure an elderly man's ED in no time. What an exciting team. I would be shitting myself if I saw them in the playoffs, because good luck winning in KeyBank Arena.</p>
+    </div>
+
+    <div class="team-blurb">
+      <div class="team-label">Montreal Canadiens — 3rd Atlantic, 102 pts</div>
+      <p>The Canadiens are a bit of a shock this year, with their young core taking huge steps and Cole "The Cock" Caufield picking goalies' noses — he's been so far in their heads. Bell Centre will be rocking all playoffs long, and it should be. A fanbase like that with the history of the Canadiens? Hockey is better when these guys are in the mix.</p>
+    </div>
+
+    <div class="team-blurb pens">
+      <div class="team-label">Pittsburgh Penguins — 2nd Metro, 92 pts</div>
+      <p>The Penguins don't quit. How the hell are they scoring so many goals? It has to stop at some point, right? Their luck has to run out? It hasn't yet and I am along for the ride. EK65 looking like his old self, and Mantha, Kindle, and Braz all looking like stud muffins — this team just isn't going anywhere. Chinakov might be the next Jagr, this guy is amazing!</p>
+    </div>
+
+    <div class="team-blurb">
+      <div class="team-label">Philadelphia Flyers — 3rd Metro, 90 pts</div>
+      <p>Another young group led by Owen Tippett and their youngest buck Porter Martone — they just aren't going anywhere besides up. This is going to be a scary team for years to come.</p>
+    </div>
+
+    <div class="team-blurb">
+      <div class="team-label">Boston Bruins — 4th Atlantic, 96 pts</div>
+      <p>The Bruins are in the mix? They look to have a Wild Card spot locked down pretty tight for some odd reason, but hell — they wouldn't be fun to see either.</p>
+    </div>
+
+    <div class="pull-quote">
+      "Wings, Jackets, Islanders, Senators — they've all had their opportunities to put themselves ahead of the pack but they all seem not to want it. How the hell do they all keep on losing when the games matter most?"
+      <cite>— The Puckfessor, deeply confused by the bottom of the East</cite>
+    </div>
+
+    <p>Ten days. April 18th. We find out what this all means. Buckle up.</p>
+
+  </main>
+
+  <footer>
+    <p>© 2025 Stick Talk - Where hockey meets laughs</p>
+    <p><a href="../../index.html">Back to Home</a></p>
+  </footer>
+
+  <script src="../../grass.js"></script>
+</body>
+</html>

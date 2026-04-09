@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026 Masters Preview - Dr. Strokologist - Stick Talk</title>
+  <link rel="stylesheet" href="../../styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Playfair+Display&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+  <style>
+    .article-body {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 2.5rem 2rem;
+      background: white;
+      position: relative;
+      z-index: 2;
+      min-height: 70vh;
+    }
+
+    .article-body h1 {
+      color: #3c2b1d;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      margin-bottom: 0.4rem;
+      line-height: 1.25;
+    }
+
+    .article-meta {
+      color: #999;
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid #d1a338;
+    }
+
+    .article-body p {
+      line-height: 1.85;
+      color: #444;
+      margin-bottom: 1.3rem;
+      font-size: 1rem;
+    }
+
+    .article-body h2 {
+      color: #3c2b1d;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      margin: 2.5rem 0 0.8rem;
+      border-left: 4px solid #d1a338;
+      padding-left: 0.75rem;
+    }
+
+    .pull-quote {
+      border-left: 4px solid #4a7c59;
+      margin: 2rem 0;
+      padding: 1rem 1.5rem;
+      background: #f0f7f0;
+      font-style: italic;
+      font-size: 1.1rem;
+      color: #3c2b1d;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .pull-quote cite {
+      display: block;
+      margin-top: 0.5rem;
+      font-size: 0.85rem;
+      color: #4a7c59;
+      font-style: normal;
+      font-weight: 600;
+    }
+
+    .intro-callout {
+      background: linear-gradient(135deg, #e8f5e8, #d4e8d4);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border: 1px solid #4a7c59;
+    }
+
+    .intro-callout p {
+      margin: 0;
+      color: #2d4a2d;
+      font-style: italic;
+    }
+
+    /* Weather forecast */
+    .weather-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+      margin: 1.25rem 0;
+    }
+
+    .weather-day {
+      background: linear-gradient(135deg, #e8f5e8, #c8e6c8);
+      border-radius: 10px;
+      padding: 1rem;
+      text-align: center;
+      border: 1px solid #4a7c59;
+    }
+
+    .weather-day .day-name {
+      font-weight: 700;
+      color: #2d5a3d;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.3rem;
+    }
+
+    .weather-day .temp {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #3c2b1d;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .weather-day .desc {
+      font-size: 0.78rem;
+      color: #555;
+      margin-top: 0.3rem;
+      line-height: 1.4;
+    }
+
+    /* Hole callout */
+    .hole-card {
+      background: #1a2e1a;
+      color: #eee;
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+      margin: 0.75rem 0;
+      border-left: 4px solid #7bb661;
+    }
+
+    .hole-card .hole-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      color: #7bb661;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+
+    .hole-card p {
+      margin: 0;
+      color: #ccc;
+      font-size: 0.92rem;
+    }
+
+    /* Traditions list */
+    .traditions-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0;
+    }
+
+    .traditions-list li {
+      padding: 0.6rem 0 0.6rem 1.75rem;
+      border-bottom: 1px solid #eee;
+      position: relative;
+      color: #444;
+      font-size: 0.97rem;
+      line-height: 1.5;
+    }
+
+    .traditions-list li::before {
+      content: "⛳";
+      position: absolute;
+      left: 0;
+      font-size: 0.85rem;
+    }
+
+    .traditions-list li:last-child {
+      border-bottom: none;
+    }
+
+    /* Drinking game */
+    .drink-section {
+      background: #fff6da;
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      margin: 1rem 0;
+      border: 1px solid #d1a338;
+    }
+
+    .drink-section h3 {
+      color: #3c2b1d;
+      font-family: 'Playfair Display', serif;
+      margin: 0 0 0.75rem 0;
+      font-size: 1.05rem;
+    }
+
+    .drink-section ul {
+      margin: 0;
+      padding-left: 1.5rem;
+    }
+
+    .drink-section ul li {
+      margin-bottom: 0.4rem;
+      color: #444;
+      font-size: 0.93rem;
+      line-height: 1.55;
+    }
+
+    /* Picks */
+    .pick-card {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: #f9f9f9;
+      border-radius: 10px;
+      padding: 0.85rem 1.25rem;
+      margin: 0.6rem 0;
+      border-left: 4px solid #d1a338;
+    }
+
+    .pick-card .pick-rank {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #d1a338;
+      min-width: 1.8rem;
+      text-align: center;
+    }
+
+    .pick-card .pick-name {
+      font-weight: 600;
+      color: #3c2b1d;
+      font-size: 1rem;
+    }
+
+    .pick-card.winner {
+      background: linear-gradient(135deg, #e8f5e8, #d4e8d4);
+      border-left-color: #4a7c59;
+    }
+
+    .pick-card.winner .pick-rank {
+      color: #4a7c59;
+    }
+
+    .pick-card.winner .pick-name {
+      font-size: 1.1rem;
+    }
+
+    .sign-off {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid #d1a338;
+      font-style: italic;
+      color: #555;
+    }
+
+    .sign-off .signature {
+      font-weight: 700;
+      color: #3c2b1d;
+      font-style: normal;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+    }
+
+    @media (max-width: 600px) {
+      .article-body {
+        padding: 1.5rem 1rem;
+      }
+      .article-body h1 {
+        font-size: 1.7rem;
+      }
+      .weather-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="grass-container" aria-hidden="true"></div>
+  <div class="snowflakes" aria-hidden="true">
+    <span class="snowflake">❄</span>
+    <span class="snowflake">❅</span>
+    <span class="snowflake">❆</span>
+    <span class="snowflake">❄</span>
+    <span class="snowflake">❅</span>
+    <span class="snowflake">❆</span>
+    <span class="snowflake">❄</span>
+    <span class="snowflake">❅</span>
+    <span class="snowflake">❆</span>
+    <span class="snowflake">❄</span>
+    <span class="snowflake">❅</span>
+    <span class="snowflake">❆</span>
+    <span class="snowflake">❄</span>
+    <span class="snowflake">❅</span>
+    <span class="snowflake">❆</span>
+    <span class="snowflake">❄</span>
+    <span class="snowflake">❅</span>
+    <span class="snowflake">❆</span>
+    <span class="snowflake">❄</span>
+    <span class="snowflake">❅</span>
+  </div>
+
+  <header>
+    <h1 class="banner-text">Stick Talk</h1>
+    <nav class="main-nav">
+      <a href="../../index.html" class="nav-link">Home</a>
+      <a href="../puckfessor-articles.html" class="nav-link">The Puckfessor</a>
+      <a href="../strokologist-articles.html" class="nav-link active">Dr. Strokologist</a>
+    </nav>
+  </header>
+
+  <main class="article-body">
+    <a href="../strokologist-articles.html" class="back-button">← Back to Articles</a>
+
+    <h1>Dr. Strokologist's 2026 Masters Preview: Returns From Hiding</h1>
+    <p class="article-meta">By Dr. Strokologist &nbsp;|&nbsp; April 8, 2026 &nbsp;|&nbsp; Est. reading time: 10 minutes</p>
+
+    <p>The doctor is back.</p>
+
+    <p>After months in hiding — watching the Penguins somehow become good again, the Pirates actually look halfway competent for once, and the Dolphins once again remind me that happiness is not allowed in South Florida — I have finally emerged from my cave for the one week of the year that truly matters.</p>
+
+    <div class="intro-callout">
+      <p>The hallowed grounds of Augusta National are back. The azaleas are blooming. The pimento cheese is flowing. The green jackets are pressed. Somewhere, a grown man is sprinting across the merch shop to buy his sixth Masters gnome and a rope hat that says "PIMENTO" on it. And somehow, after months of winter depression and watching meaningless regular season sports, we have finally made it back to Masters week.</p>
+    </div>
+
+    <h2>The Par 3 Contest Was Absolute Chaos</h2>
+
+    <p>The Par 3 Contest kicked off with an absolute bang. There were <strong>FOUR</strong> — yes, <em>four</em> — hole-in-ones on Wednesday.</p>
+
+    <p>My beautiful king Justin Thomas got us started. JT rolled in a bomb on the 1st, then immediately followed it by making an ace on the 2nd. That man was hotter than a beer cart girl on the back nine at a charity scramble. JT then proceeded to win $1,000 off Max Homa and Jordan Spieth, because apparently if you're Jordan Spieth now, your job description is just "lose money and occasionally relive 2016."</p>
+
+    <p>The other aces came from Wyndham Clark (fuck you, Wyndham), Keegan Bradley, and the world's most handsome human Tommy Fleetwood — who had little Frankie on the bag. Unfortunately, Frankie once again "tried his hardest" but failed to make the green. In better news, he absolutely had the distance. It just leaked a tad right. 2027 is Frankie's year. I can feel it.</p>
+
+    <p>The winner of the Par 3 Contest was Aaron Rai, which is kind of like winning free breadsticks at Olive Garden. Congratulations, but it doesn't actually mean anything — because nobody who has won the Par 3 Contest has ever gone on to win the Masters. So Aaron, congrats on your ceremonial death sentence.</p>
+
+    <h2>The Big Storylines</h2>
+
+    <p>Let's start with the elephant in the room. <strong>Tiger Woods is not here.</strong></p>
+
+    <p>Tiger flipped his car and got himself arrested for an alleged DUI with suspicion of painkillers. I am fully convinced Tiger planned on playing this week and was going to show up with one leg, half a spine, and a gallon of even more painkillers before the latest disaster. Now we're being told Tiger is "rehabbing out of the country," which is golf PR speak for "he's somewhere wearing Oakleys, taking painkillers, and trying to stripe 4-irons off a mat in the Bahamas."</p>
+
+    <p>And <strong>Phil Mickelson</strong> also is not in the field. Which means this is the first Masters in 32 years without either Tiger or Phil. Read that sentence again and then take a moment to stare into the void and realize you are old.</p>
+
+    <p><em>Also: take a shot every time the broadcast mentions Tiger's arrest, Tiger not being here, or Phil not being in the field. If you survive until Sunday, you deserve your own green jacket.</em></p>
+
+    <p>Meanwhile, <strong>Scottie Scheffler</strong> is apparently "struggling" this year. You know, Scottie struggling — which means he only has one win, three top-5s, three more top-25s, and has made every cut. Poor guy. Thoughts and prayers.</p>
+
+    <p><strong>Bryson DeChambeau</strong> and <strong>Jon Rahm</strong> have both been on heaters over on LIV. I still don't know if winning on LIV actually counts, because every leaderboard looks like it was generated by ChatGPT after three vodka sodas, but both guys are coming in hot.</p>
+
+    <p>Cameron Young finally won a real golf tournament at THE PLAYERS. Matthew Fitzpatrick has suddenly remembered how to play golf with a runner-up at THE PLAYERS and a win at Valspar. Ludvig Åberg continues to look like the second coming of Jesus on Thursday, Friday, and Saturday before transforming into me trying to break 90 by Sunday afternoon.</p>
+
+    <p>Akshay Bhatia finally got himself a big-boy win, and J.J. Spaun came out of absolutely nowhere at the Valero — like that random guy in your March Madness pool who picked Butler to the Final Four back before NIL ruined college basketball. But that's a story for another day.</p>
+
+    <p>And then there is <strong>Rory</strong>. Rory is back as defending champion after finally winning the career Grand Slam. Honestly, now that he finally did it, it's less fun to make fun of him. Plus his Champions Dinner menu looked absolutely elite. I would have housed that meal harder than a dad three beers deep discovering the pimento cheese sandwiches are still only $1.50.</p>
+
+    <h2>Weather Forecast</h2>
+
+    <p>We have what might be the best weather forecast Augusta has seen in years.</p>
+
+    <div class="weather-grid">
+      <div class="weather-day">
+        <div class="day-name">Thursday</div>
+        <div class="temp">73°</div>
+        <div class="desc">Sunny, light breeze. Perfect weather to sit on your couch pretending you know what grain is.</div>
+      </div>
+      <div class="weather-day">
+        <div class="day-name">Friday</div>
+        <div class="temp">79°</div>
+        <div class="desc">Gorgeous. No notes.</div>
+      </div>
+      <div class="weather-day">
+        <div class="day-name">Saturday</div>
+        <div class="temp">84°</div>
+        <div class="desc">Toasty. The back nine is going to be a furnace.</div>
+      </div>
+      <div class="weather-day">
+        <div class="day-name">Sunday</div>
+        <div class="temp">87°</div>
+        <div class="desc">Absolutely sweating through your polo while pretending the back nine isn't giving you chest pains.</div>
+      </div>
+    </div>
+
+    <p>The course is expected to be firm, fast, and mean as hell. The greens are going to be rolling like your buddy's grandma's slot machine addiction in Vegas.</p>
+
+    <h2>The Holes That Will Ruin Lives</h2>
+
+    <div class="hole-card">
+      <div class="hole-num">Hole 5</div>
+      <p>One of the nastiest holes on the property. Long, uphill, and basically asking players to hit the perfect tee shot and the perfect approach — or go screw themselves.</p>
+    </div>
+
+    <div class="hole-card">
+      <div class="hole-num">Hole 11 — Amen Corner Begins</div>
+      <p>This is where Amen Corner starts separating the men from the boys. Miss left? Water. Miss right? Trees. Miss long? You're dead.</p>
+    </div>
+
+    <div class="hole-card">
+      <div class="hole-num">Hole 12 — Golden Bell</div>
+      <p>The tiny little bastard. Looks innocent until you realize the wind changes directions every four seconds and suddenly a wedge that should land pin-high is taking a swim in Rae's Creek while Jim Nantz whispers softly about the traditions of Augusta.</p>
+    </div>
+
+    <div class="hole-card">
+      <div class="hole-num">Hole 18</div>
+      <p>Has quietly become an absolute monster, especially with Sunday pressure and everyone trying not to puke all over Magnolia Lane.</p>
+    </div>
+
+    <h2>The Best Masters Traditions</h2>
+
+    <p>There is no place in sports like the Masters, because Augusta still acts like it is 1978 — and somehow that <em>rules.</em></p>
+
+    <ul class="traditions-list">
+      <li>No phones allowed. For one glorious week, people have to actually watch the golf instead of tweeting every five minutes.</li>
+      <li>The Par 3 Contest, where grown men hand clubs to their children and immediately become emotional disasters.</li>
+      <li>The pimento cheese sandwich still costs basically nothing.</li>
+      <li>The egg salad. The peach ice cream sandwich. The Crow's Nest beer.</li>
+      <li>The honorary starters.</li>
+      <li>Skipping balls across the pond at 16.</li>
+      <li>The Champions Dinner, where we all judge another grown man's menu like we are Gordon Ramsay.</li>
+      <li>And if you're lucky enough to go, you can still eat like an absolute king for about 20 bucks. At every other sporting event in America, 20 dollars gets you a warm beer and depression.</li>
+    </ul>
+
+    <h2>The 2026 Masters Drinking Game</h2>
+
+    <div class="drink-section">
+      <h3>Take a drink every time:</h3>
+      <ul>
+        <li>Jim Nantz says "a tradition unlike any other"</li>
+        <li>Someone says "Amen Corner"</li>
+        <li>They show azaleas</li>
+        <li>They mention Rory's Grand Slam</li>
+        <li>They mention Scottie being a family man</li>
+        <li>Somebody says Tiger Woods' name</li>
+        <li>Somebody says Phil Mickelson's name</li>
+        <li>They mention Tiger's arrest</li>
+      </ul>
+    </div>
+
+    <div class="drink-section">
+      <h3>Take two drinks if:</h3>
+      <ul>
+        <li>They show Bryson hitting a 400-yard drive</li>
+        <li>They show Rory looking sad for absolutely no reason</li>
+        <li>Jordan Spieth somehow makes double from the middle of the fairway</li>
+        <li>Jordan Spieth somehow makes birdie from the trees</li>
+        <li>Somebody references LIV Golf and immediately acts weird about it</li>
+      </ul>
+    </div>
+
+    <div class="drink-section">
+      <h3>Finish your drink if:</h3>
+      <ul>
+        <li>Somebody dunks one in Rae's Creek</li>
+        <li>A player makes a hole-in-one</li>
+        <li>Bryson wins and every gambler on Twitter pretends they "had him all week"</li>
+        <li>Jim Nantz says something so poetic that your dad quietly whispers, "damn."</li>
+      </ul>
+    </div>
+
+    <div class="drink-section">
+      <h3>Take a shot if:</h3>
+      <ul>
+        <li>They mention Tiger's arrest and Phil not being in the field within the same five-minute span</li>
+        <li>Jordan Spieth hits it in the water on 12 again</li>
+        <li>Rory somehow misses a four-footer</li>
+      </ul>
+    </div>
+
+    <h2>Alright, Who Actually Wins?</h2>
+
+    <p>This is where Masters week gets truly ridiculous. Every golf gambling account on Twitter spends the entire week posting things like:</p>
+
+    <div class="pull-quote">
+      "Only four players can win this Masters. Since 1987, every winner has ranked top 12 in Strokes Gained: Approach, top 20 in Bogey Avoidance, top 30 in Driving Distance, has at least two top-10s in Florida, owns a dog, and has once eaten at Waffle House after midnight."
+      <cite>— Every golf Twitter account, every year, forever</cite>
+    </div>
+
+    <p>Then five minutes later another account tweets: <em>"Actually, there are only THREE players who can win: Rory, Scottie, and a Scandinavian guy with a jawline."</em> Then another guy says Cam Smith is a lock because of "vibes." And somehow by Thursday morning we have convinced ourselves that eight different people are the only guy who can win.</p>
+
+    <p>The favorites are obvious:</p>
+
+    <div class="pick-card">
+      <div class="pick-rank">1</div>
+      <div class="pick-name">Scottie Scheffler</div>
+    </div>
+    <div class="pick-card">
+      <div class="pick-rank">2</div>
+      <div class="pick-name">Rory McIlroy</div>
+    </div>
+    <div class="pick-card">
+      <div class="pick-rank">3</div>
+      <div class="pick-name">Jon Rahm</div>
+    </div>
+    <div class="pick-card">
+      <div class="pick-rank">4</div>
+      <div class="pick-name">Bryson DeChambeau</div>
+    </div>
+
+    <p>I was extremely high on Bryson and Rahm all week. Then I saw that Bryson has the highest percentage of betting tickets — which means, by law, I have to fade him. Sorry Bryson. I love you. I support you. I believe in you. But the second the public piles on, it becomes illegal for me to join them.</p>
+
+    <p>I also think Rory's back is more serious than people are letting on. He's going to be right there because he is Rory, but I don't fully trust it.</p>
+
+    <p>Scottie is going to do Scottie things because Scottie is basically a golfing Terminator. Matthew Fitzpatrick is going to randomly finish T-8 and make everyone pretend they saw it coming. Cameron Young will probably have a sneaky week that I guess now is not so sneaky. And because the universe has a sick sense of humor, Adam Scott will absolutely finish inside the top 10 again while looking like a 45-year-old Australian underwear model.</p>
+
+    <p><strong>But my pick is Jon Rahm.</strong></p>
+
+    <div class="pick-card winner">
+      <div class="pick-rank">🏆</div>
+      <div class="pick-name">Official Dr. Strokologist Pick: Jon Rahm</div>
+    </div>
+
+    <p>Quietly lurking. Feels like he hasn't really been talked about. Playing great on LIV — which, again, I still don't know if that counts, but the man has been striping it. He closed majors beautifully last year, he loves Augusta, and I think he gets it done.</p>
+
+    <p>But once again: <em>never bet against Scottie.</em></p>
+
+    <div class="sign-off">
+      <p>Enjoy the week. Enjoy the golf. Enjoy screaming at your television because Jordan Spieth just made triple from the middle of the fairway. I'll see you Monday when we find out who ruined their life on 12, who got way too drunk during the drinking game, and whether Rahm delivered us all to the promised land.</p>
+      <p>Until then... keep your drives long, your drinks cold, and your gambling irresponsibly justified.</p>
+      <p class="signature">— Dr. Strokologist, M.B.A.</p>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>© 2025 Stick Talk - Where golf meets laughs</p>
+    <p><a href="../../index.html">Back to Home</a></p>
+  </footer>
+
+  <script src="../../grass.js"></script>
+</body>
+</html>
