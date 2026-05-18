@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mid Round 2 Review - The Puckfessor - Stick Talk</title>
+  <link rel="stylesheet" href="../../styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Playfair+Display&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+  <style>
+    .article-body {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 2.5rem 2rem;
+      background: white;
+      position: relative;
+      z-index: 2;
+      min-height: 70vh;
+    }
+
+    .article-body h1 {
+      color: #3c2b1d;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      margin-bottom: 0.4rem;
+      line-height: 1.25;
+    }
+
+    .article-meta {
+      color: #999;
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid #d1a338;
+    }
+
+    .article-body p {
+      line-height: 1.85;
+      color: #444;
+      margin-bottom: 1.3rem;
+      font-size: 1rem;
+    }
+
+    .article-body h2 {
+      color: #3c2b1d;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      margin: 2.5rem 0 0.8rem;
+      border-left: 4px solid #d1a338;
+      padding-left: 0.75rem;
+    }
+
+    .article-body h3 {
+      color: #3c2b1d;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      margin: 1.8rem 0 0.5rem;
+    }
+
+    .pull-quote {
+      border-left: 4px solid #872e24;
+      margin: 2rem 0;
+      padding: 1rem 1.5rem;
+      background: #fff6da;
+      font-style: italic;
+      font-size: 1.15rem;
+      color: #3c2b1d;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .pull-quote cite {
+      display: block;
+      margin-top: 0.5rem;
+      font-size: 0.85rem;
+      color: #872e24;
+      font-style: normal;
+      font-weight: 600;
+    }
+
+    .intro-callout {
+      background: linear-gradient(135deg, #e8f0e8, #d4e8d4);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border: 1px solid #4a7c59;
+    }
+
+    .intro-callout p {
+      margin: 0;
+      color: #2d4a2d;
+    }
+
+    .series-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 0.75rem;
+      margin: 1.5rem 0;
+    }
+
+    .series-card {
+      background: #f6e5b5;
+      border: 1px solid #d1a338;
+      border-radius: 10px;
+      padding: 0.85rem 1rem;
+      text-align: center;
+    }
+
+    .series-card.done {
+      background: #e8f0e8;
+      border-color: #4a7c59;
+    }
+
+    .series-card .teams {
+      font-size: 0.8rem;
+      color: #666;
+      margin-bottom: 0.3rem;
+    }
+
+    .series-card .score {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #872e24;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .series-card.done .score {
+      color: #2d5a3d;
+    }
+
+    .series-card .status {
+      font-size: 0.72rem;
+      color: #888;
+      margin-top: 0.2rem;
+    }
+
+    .series-card.done .status {
+      color: #4a7c59;
+      font-weight: 600;
+    }
+
+    .conference-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: #d1a338;
+      text-transform: uppercase;
+      margin: 1.5rem 0 0.5rem;
+    }
+
+    .footnote-section {
+      margin-top: 3rem;
+      padding-top: 1rem;
+      border-top: 1px solid #ddd;
+      font-size: 0.82rem;
+      color: #888;
+    }
+
+    .footnote-section p {
+      font-size: 0.82rem;
+      color: #888;
+      margin-bottom: 0.4rem;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 600px) {
+      .article-body {
+        padding: 1.5rem 1rem;
+      }
+      .article-body h1 {
+        font-size: 1.7rem;
+      }
+      .series-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="grass-container" aria-hidden="true"></div>
+  <div class="snowflakes" aria-hidden="true">
+    <span class="snowflake">❄</span>
+    <span class="snowflake">❅</span>
+    <span class="snowflake">❆</span>
+    <span class="snowflake">❄</span>
+    <span class="snowflake">❅</span>
+    <span class="snowflake">❆</span>
+    <span class="snowflake">❄</span>
+    <span class="snowflake">❅</span>
+    <span class="snowflake">❆</span>
+    <span class="snowflake">❄</span>
+    <span class="snowflake">❅</span>
+    <span class="snowflake">❆</span>
+    <span class="snowflake">❄</span>
+    <span class="snowflake">❅</span>
+    <span class="snowflake">❆</span>
+    <span class="snowflake">❄</span>
+    <span class="snowflake">❅</span>
+    <span class="snowflake">❆</span>
+    <span class="snowflake">❄</span>
+    <span class="snowflake">❅</span>
+  </div>
+
+  <header>
+    <h1 class="banner-text">Stick Talk</h1>
+    <nav class="main-nav">
+      <a href="../../index.html" class="nav-link">Home</a>
+      <a href="../puckfessor-articles.html" class="nav-link active">The Puckfessor</a>
+      <a href="../strokologist-articles.html" class="nav-link">Dr. Strokologist</a>
+    </nav>
+  </header>
+
+  <main class="article-body">
+    <a href="../puckfessor-articles.html" class="back-button">← Back to Articles</a>
+
+    <h1>The Puckfessor's Mid Round 2 Review</h1>
+    <p class="article-meta">By The Puckfessor &nbsp;|&nbsp; May 2026 &nbsp;|&nbsp; Est. reading time: 7 minutes</p>
+
+    <div class="intro-callout">
+      <p><em>Every year I get excited about the NHL playoffs and every year I am amazed — I am nowhere near as excited as I should have been. These games and series have been on crack. There are so many stories to get to and I wish I could write about all of them. The Blade Gang in Buffalo, Ryan Smith trading Vegas jerseys for Mammoth jerseys, Sid going down 0-3 to the Flyers, and so much more. Let's get into each, briefly.</em></p>
+    </div>
+
+    <p class="conference-label">Series Snapshot</p>
+    <div class="series-grid">
+      <div class="series-card">
+        <div class="teams">PHI vs. PIT</div>
+        <div class="score">3–2</div>
+        <div class="status">Flyers lead ▶</div>
+      </div>
+      <div class="series-card">
+        <div class="teams">BUF vs. BOS</div>
+        <div class="score">3–1</div>
+        <div class="status">Sabres lead ▶</div>
+      </div>
+      <div class="series-card">
+        <div class="teams">TBL vs. MTL</div>
+        <div class="score">2–2</div>
+        <div class="status">Tied ▶</div>
+      </div>
+      <div class="series-card done">
+        <div class="teams">CAR vs. OTT</div>
+        <div class="score">4–0</div>
+        <div class="status">Carolina wins ✓</div>
+      </div>
+      <div class="series-card">
+        <div class="teams">VGK vs. UTA</div>
+        <div class="score">2–2</div>
+        <div class="status">Tied ▶</div>
+      </div>
+      <div class="series-card">
+        <div class="teams">MIN vs. DAL</div>
+        <div class="score">2–2</div>
+        <div class="status">Tied ▶</div>
+      </div>
+      <div class="series-card">
+        <div class="teams">ANA vs. EDM</div>
+        <div class="score">3–1</div>
+        <div class="status">Ducks lead ▶</div>
+      </div>
+      <div class="series-card done">
+        <div class="teams">COL vs. LAK</div>
+        <div class="score">4–0</div>
+        <div class="status">Colorado wins ✓</div>
+      </div>
+    </div>
+
+    <h2>Eastern Conference</h2>
+
+    <h3>Philadelphia Flyers 3 – Pittsburgh Penguins 2</h3>
+
+    <p>Sid, Geno, EK, and Letang showed their age against Martone, Konecny, Tippett, and Zegras. I'll give it to them — these young guys can play and they look like a team that is not to be overlooked. Vladar has been solid when the Pens can actually get shots on net, which in the first three games seemed physically impossible.</p>
+
+    <p>But never — I repeat, <em>never</em> — count out Sid. Game 5 the camera caught one of Sid's famous stares, and if I were on the Flyers I'd be shitting in my pants. Regardless, the Flyers have looked great and probably should have won Game 4, but here we are headed back to Philly for Game 6.</p>
+
+    <div class="pull-quote">
+      "Never count out Sid. Never. The man gives you that <em>look</em> and suddenly the whole building knows something shifted."
+      <cite>— The Puckfessor, Game 5, scary hours</cite>
+    </div>
+
+    <h3>Buffalo Sabres 3 – Boston Bruins 1</h3>
+
+    <p>Game 1 of the playoffs in Buffalo was absolute insanity. Did the whole city shut down? The Blade Gang runs northern New York, and a warning to all MMA dummies out there: <strong>STAY AWAY.</strong> The Bruins started off hot with a 2-0 lead in Game 1 and in the most crackhead game of the year, the Sabres came charging back with their heads down and horns up for a 4-2 victory. The whole city of Buffalo was on a two-hour delay the next morning — that's how hard the celebration hit.</p>
+
+    <p>The Bruins came back to steal one in Buffalo, but it's been all Sabres ever since. This team is special and they know it.</p>
+
+    <h3>Tampa Bay Lightning 2 – Montreal Canadiens 2</h3>
+
+    <p>Wow. These teams are in a full-blown fist fight with sticks and skates on. The poor linesmen are catching strays like a porch with catnip left on it. Hagel is a rabid dog and he is the definition of what makes the playoffs so special — 6 goals so far and he absolutely <em>drops</em> Slafkovsky, who has about five inches on him. Front runner for the Conn Smyth in my mind.</p>
+
+    <p>Game 3 took about five hours to complete with a scrum after every single whistle. Whoever comes out of this one is going to have a black eye and a story to tell.</p>
+
+    <div class="pull-quote">
+      "Hagel is a psycho maniac. I mean that with the utmost respect."
+      <cite>— The Puckfessor, watching Montreal and Tampa try to kill each other</cite>
+    </div>
+
+    <h3>Carolina Hurricanes 4 – Ottawa Senators 0</h3>
+
+    <p>Poor Ottawa. They deserved better — at least get beaten in a shootout or something with a little pizzazz, rather than swept by these damn Hurricanes. Every year same old thing from the Canes. It wins series, so it's hard to complain if you're a Carolina fan, but two series wins this year ain't gonna cut it.</p>
+
+    <p>One awesome fact of this series: Staal and Brady going at it not even a second into Stanley Cup Playoff hockey. Beautiful. To sum up this series in a nutshell — I was at a bar in South Carolina not far from Raleigh during Game 1, and I had to <em>ask the bartender</em> to switch one of the TVs from ESPN2 to ESPN just to get it on. That tells you everything about the buzz surrounding this series.</p>
+
+    <h2>Western Conference</h2>
+
+    <h3>Vegas Golden Knights 2 – Utah Hockey Club 2</h3>
+
+    <p>Heavy, heavy hockey being played on the west coast with this one. I was shocked to see Utah hanging in with how physical Vegas was in Game 1 — I thought for sure they wouldn't be able to last more than two periods. But this young group proved me wrong, like so many other teams in these playoffs have. Cooley, Guenther, and Keller are such a treat to watch.</p>
+
+    <p>This speedy, highly skilled team is sticking to their game and paying no mind to getting absolutely bone-crushed nearly every time they touch the puck. Two very different styles of play, but you know what they say — opposites attract. This one's been a thrill.</p>
+
+    <h3>Minnesota Wild 2 – Dallas Stars 2</h3>
+
+    <p>Everyone knew this was going seven. Two juggernaut teams clashing head-to-head with ups and downs on both sides of the ice. Minny made a statement win with Game 1 but Dallas has been there before, having an eerily similar start to last year's playoffs before getting smoked by Colorado.</p>
+
+    <p>If the Conn Smyth could go to two guys, Quinn Hughes and Brock Faber are making an amazing argument as to why they should get it. Faber looks like Hughes has been teaching him how to rip the bong and play hockey — cool as a cucumber. Wyatt Johnston and Jason Robertson on the other hand also have something to say; these two just don't quit and it seems like every time Dallas gets on the board, it's one of them.</p>
+
+    <p>Minnesota looks good. Dallas isn't going anywhere.</p>
+
+    <div class="pull-quote">
+      "Can't believe I almost forgot to mention Boldy. So Matt Boldy."
+      <cite>— The Puckfessor, correcting himself, mid-sentence</cite>
+    </div>
+
+    <h3>Anaheim Ducks 3 – Edmonton Oilers 1</h3>
+
+    <p>This one I must say is a shocker. Is it because maybe I haven't watched as many Ducks games as I should have before making my predictions? Maybe. But maybe this bunch of misfits in orange just said <em>quack it</em> — we're going into this series with nothing to lose and we will punch McDavid and Leon in the face.</p>
+
+    <p>As cliché as it may be, this team runs through two guys, which is not a winning recipe over a full series. If they didn't win the Cup the past two seasons with those two it's hard to think they can this year. Bouchard has been absolutely ripping bongs and bombs all series — this guy is a hoot. If anyone is built to come back from 1-3 it's Edmonton, but as of now McDavid is a game-time decision for Game 5, which I'm afraid would be the end of Edmonton.</p>
+
+    <h3>Colorado Avalanche 4 – Los Angeles Kings 0</h3>
+
+    <p>Kopitar, you have been an amazing player and person for the game of hockey for the past 20 years. The fellas tried their hardest to bring you joy in one last cup run, but damn it — they drew the shortest straw and had to play Colorado in the first round. In the famous words of Darryl Sutter: a waste of eight days.</p>
+
+    <p>Colorado is rolling. They are now going to have time to rest and recover while the Wild and Dallas scratch and claw at each other until one of them dies. That is what you call a structural advantage, and the Avalanche earned every minute of it.</p>
+
+    <div class="footnote-section">
+      <p><sup>1</sup> The Puckfessor's mid-round assessments are based on a combination of careful game watching, two bar trips, vibes, and a general sense that he is sometimes at least partially right.</p>
+      <p><sup>2</sup> The Pens made me want to drink myself to sleep the first three games.</p>
+      <p><sup>3</sup> Series records reflect standings at time of writing. The Puckfessor accepts no liability for things that happen after he hits publish.</p>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Stick Talk - Where hockey meets laughs</p>
+    <p><a href="../../index.html">Back to Home</a></p>
+  </footer>
+
+  <script src="../../grass.js"></script>
+</body>
+</html>
