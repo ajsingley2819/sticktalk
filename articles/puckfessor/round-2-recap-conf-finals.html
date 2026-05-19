@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Round 2 Recap & Conference Finals Preview - The Puckfessor - Stick Talk</title>
+  <link rel="stylesheet" href="../../styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Playfair+Display&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+  <style>
+    .article-body {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 2.5rem 2rem;
+      background: white;
+      position: relative;
+      z-index: 2;
+      min-height: 70vh;
+    }
+
+    .article-body h1 {
+      color: #3c2b1d;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      margin-bottom: 0.4rem;
+      line-height: 1.25;
+    }
+
+    .article-meta {
+      color: #999;
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid #d1a338;
+    }
+
+    .article-body p {
+      line-height: 1.85;
+      color: #444;
+      margin-bottom: 1.3rem;
+      font-size: 1rem;
+    }
+
+    .article-body h2 {
+      color: #3c2b1d;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      margin: 2.5rem 0 0.8rem;
+      border-left: 4px solid #d1a338;
+      padding-left: 0.75rem;
+    }
+
+    .article-body h3 {
+      color: #3c2b1d;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      margin: 1.8rem 0 0.5rem;
+    }
+
+    .pull-quote {
+      border-left: 4px solid #872e24;
+      margin: 2rem 0;
+      padding: 1rem 1.5rem;
+      background: #fff6da;
+      font-style: italic;
+      font-size: 1.15rem;
+      color: #3c2b1d;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .pull-quote cite {
+      display: block;
+      margin-top: 0.5rem;
+      font-size: 0.85rem;
+      color: #872e24;
+      font-style: normal;
+      font-weight: 600;
+    }
+
+    .intro-callout {
+      background: linear-gradient(135deg, #e8f0e8, #d4e8d4);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border: 1px solid #4a7c59;
+    }
+
+    .intro-callout p {
+      margin: 0;
+      color: #2d4a2d;
+    }
+
+    .series-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 0.75rem;
+      margin: 1.5rem 0;
+    }
+
+    .series-card {
+      background: #f6e5b5;
+      border: 1px solid #d1a338;
+      border-radius: 10px;
+      padding: 0.85rem 1rem;
+      text-align: center;
+    }
+
+    .series-card.done {
+      background: #e8f0e8;
+      border-color: #4a7c59;
+    }
+
+    .series-card.live {
+      background: #fdf0f0;
+      border-color: #872e24;
+    }
+
+    .series-card .teams {
+      font-size: 0.8rem;
+      color: #666;
+      margin-bottom: 0.3rem;
+    }
+
+    .series-card .score {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #872e24;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .series-card.done .score {
+      color: #2d5a3d;
+    }
+
+    .series-card .status {
+      font-size: 0.72rem;
+      color: #888;
+      margin-top: 0.2rem;
+    }
+
+    .series-card.done .status {
+      color: #4a7c59;
+      font-weight: 600;
+    }
+
+    .series-card.live .status {
+      color: #872e24;
+      font-weight: 600;
+    }
+
+    .conference-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: #d1a338;
+      text-transform: uppercase;
+      margin: 1.5rem 0 0.5rem;
+    }
+
+    .conf-finals-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .conf-finals-card {
+      background: #f6e5b5;
+      border: 2px solid #d1a338;
+      border-radius: 12px;
+      padding: 1.2rem 1.4rem;
+      text-align: center;
+    }
+
+    .conf-finals-card .conf-name {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #d1a338;
+      margin-bottom: 0.5rem;
+    }
+
+    .conf-finals-card .matchup {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #3c2b1d;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .conf-finals-card .preview-tag {
+      display: inline-block;
+      margin-top: 0.5rem;
+      font-size: 0.72rem;
+      background: #872e24;
+      color: white;
+      border-radius: 20px;
+      padding: 0.2rem 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+    }
+
+    .footnote-section {
+      margin-top: 3rem;
+      padding-top: 1rem;
+      border-top: 1px solid #ddd;
+      font-size: 0.82rem;
+      color: #888;
+    }
+
+    .footnote-section p {
+      font-size: 0.82rem;
+      color: #888;
+      margin-bottom: 0.4rem;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 600px) {
+      .article-body {
+        padding: 1.5rem 1rem;
+      }
+      .article-body h1 {
+        font-size: 1.7rem;
+      }
+      .series-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .conf-finals-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="grass-container" aria-hidden="true"></div>
+  <div class="snowflakes" aria-hidden="true">
+    <span class="snowflake">❄</span>
+    <span class="snowflake">❅</span>
+    <span class="snowflake">❆</span>
+    <span class="snowflake">❄</span>
+    <span class="snowflake">❅</span>
+    <span class="snowflake">❆</span>
+    <span class="snowflake">❄</span>
+    <span class="snowflake">❅</span>
+    <span class="snowflake">❆</span>
+    <span class="snowflake">❄</span>
+    <span class="snowflake">❅</span>
+    <span class="snowflake">❆</span>
+    <span class="snowflake">❄</span>
+    <span class="snowflake">❅</span>
+    <span class="snowflake">❆</span>
+    <span class="snowflake">❄</span>
+    <span class="snowflake">❅</span>
+    <span class="snowflake">❆</span>
+    <span class="snowflake">❄</span>
+    <span class="snowflake">❅</span>
+  </div>
+
+  <header>
+    <h1 class="banner-text">Stick Talk</h1>
+    <nav class="main-nav">
+      <a href="../../index.html" class="nav-link">Home</a>
+      <a href="../puckfessor-articles.html" class="nav-link active">The Puckfessor</a>
+      <a href="../strokologist-articles.html" class="nav-link">Dr. Strokologist</a>
+    </nav>
+  </header>
+
+  <main class="article-body">
+    <a href="../puckfessor-articles.html" class="back-button">← Back to Articles</a>
+
+    <h1>Round 2 Recap & Conference Finals Preview</h1>
+    <p class="article-meta">By The Puckfessor &nbsp;|&nbsp; May 2026 &nbsp;|&nbsp; Est. reading time: 8 minutes</p>
+
+    <div class="intro-callout">
+      <p><em>I'll admit I've been a bit off track, but fear no more — the Puckfessor is back. I'm sitting here watching the Game 7 preview between Montreal and Buffalo, so we're going to have a lengthy one: a full round 2 recap and a look ahead at who's left standing.</em></p>
+    </div>
+
+    <p class="conference-label">Round 2 Final Results</p>
+    <div class="series-grid">
+      <div class="series-card done">
+        <div class="teams">CAR vs. PHI</div>
+        <div class="score">4–0</div>
+        <div class="status">Carolina wins ✓</div>
+      </div>
+      <div class="series-card live">
+        <div class="teams">BUF vs. MTL</div>
+        <div class="score">3–3</div>
+        <div class="status">Game 7 Tonight ▶</div>
+      </div>
+      <div class="series-card done">
+        <div class="teams">COL vs. MIN</div>
+        <div class="score">4–1</div>
+        <div class="status">Colorado wins ✓</div>
+      </div>
+      <div class="series-card done">
+        <div class="teams">VGK vs. ANA</div>
+        <div class="score">4–2</div>
+        <div class="status">Vegas wins ✓</div>
+      </div>
+    </div>
+
+    <h2>Round 2 Recap</h2>
+
+    <h3>Carolina Hurricanes 4 – Philadelphia Flyers 0</h3>
+
+    <p>Carolina again does what Carolina does. They are a good team — I have to admit it — they're just not fun to watch. Even with Philly limping into this fight like a wounded dog, the Canes still looked the part. They stick to their game and don't veer away; even after being down in two of these four games, they held that pillow down over the comatose Flyers until it was over.</p>
+
+    <p>As a Pens fan, I'll admit I wanted Philly to win this one. I am such a Canes hater that I can't help myself. But credit where it's due — Carolina doesn't flinch and they don't let you breathe.</p>
+
+    <div class="pull-quote">
+      "I wanted Philly to win that series so badly. As a Pens fan, rooting for the Flyers — that's what Carolina does to you."
+      <cite>— The Puckfessor, suffering</cite>
+    </div>
+
+    <h3>Buffalo Sabres 3 – Montreal Canadiens 3 (Game 7 Tonight)</h3>
+
+    <p>As I sit here listening to this brutal ESPN pregame show, I have absolutely no clue how this one is going to go. Every game has been a roller coaster. This series has had so many wild storylines — the Blade Gang versus Montreal's very own blade gang in the streets of both cities is what playoff hockey is all about. These fans are legitimately nuts.</p>
+
+    <p>Dobes isn't a hero — he's a silly little goalie who tries to stop pucks. But that is not how the Habs fans are seeing it. To them? Dobes is a saint. Meanwhile Benson is playing like Kucherov and Dahlin is playing like Makar, and I have no idea how, but I just call it like I see it. No clue what happens tonight.</p>
+
+    <div class="pull-quote">
+      "I'm not a hero. I'm just a silly little goalie who tries to stop pucks."
+      <cite>— Dobes, probably, as the Montreal faithful lose their minds</cite>
+    </div>
+
+    <h3>Colorado Avalanche 4 – Minnesota Wild 1</h3>
+
+    <p>This was supposed to be the series of a lifetime, and it felt closer than the record shows — Colorado got the job done even with an injured Makar. With that said, Brodin and Eriksson Ek being out for the Wild was a massive kick in the teeth. This Avs team is going to be a hard one to stop.</p>
+
+    <p>My thought was that if any team could do it, it was Minnesota. And look where we are: it still took five games. The Avs have one hell of a road ahead, but we'll get to that.</p>
+
+    <h3>Vegas Golden Knights 4 – Anaheim Ducks 2</h3>
+
+    <p>Vegas does it again. They get better as a series goes on and it's genuinely not fair. They act like a cat playing with its food until it gets hungry — they don't want to play seven games, so they just crush the opponent in Games 5 and 6. Anaheim had one hell of a run and I salute their service for knocking out Edmonton in round one.</p>
+
+    <p>Stone is out and that is a huge handicap for this team, but Mitchy is stepping up enormous and they look like an absolute beast heading into the conference finals.</p>
+
+    <h2>Conference Finals Preview</h2>
+
+    <p class="conference-label">The Final Four</p>
+    <div class="conf-finals-grid">
+      <div class="conf-finals-card">
+        <div class="conf-name">Eastern Conference Final</div>
+        <div class="matchup">Carolina vs. BUF / MTL</div>
+        <div class="preview-tag">Game 7 decides tonight</div>
+      </div>
+      <div class="conf-finals-card">
+        <div class="conf-name">Western Conference Final</div>
+        <div class="matchup">Vegas vs. Colorado</div>
+        <div class="preview-tag">Coming up</div>
+      </div>
+    </div>
+
+    <h3>Carolina vs. Buffalo / Montreal</h3>
+
+    <p>With how wild the Buffalo–Montreal series has been, I can actually do this preview without knowing who wins Game 7 — because the game plan against Carolina is exactly the same regardless. They need to make this a <em>fun</em> series: chances off the rush, get-in-your-face hockey, and a whole lot of balls. Whoever comes out of that Game 7 cannot fall into the trap that is the Hurricanes.</p>
+
+    <p>The Canes are flying, but they've had a hell of a wait — over a week between games at this point. Who knows how they come out in Game 1? What I do know is that whoever wins tonight is going to be beat up. Carolina is rested and ready. This one could go either way early, but Carolina's system doesn't care how tired you are.</p>
+
+    <h3>Vegas Golden Knights vs. Colorado Avalanche</h3>
+
+    <p>Heavy, heavy hockey. These are two big, physical teams that are also incredibly skilled. Colorado has the clear edge in speed; Vegas has the edge in physicality. I cannot wait for this one — I am fully expecting a bloodbath.</p>
+
+    <p>The bad boys of the league right now don't give a damn about fines or draft picks or answering media questions. They only care about right here, right now, and that is so admirable. This series is going to be must-watch television every single night it's on.</p>
+
+    <div class="pull-quote">
+      "Vegas vs. Colorado is going to be the series of the year. Two freight trains, one track. Someone is getting flattened."
+      <cite>— The Puckfessor, with genuine excitement for the first time in weeks</cite>
+    </div>
+
+    <div class="footnote-section">
+      <p><sup>1</sup> The Puckfessor acknowledges he has been a bit off track and sincerely apologizes. Life happens. Hockey waits for no man.</p>
+      <p><sup>2</sup> Dobes quote is approximate. The Puckfessor was not in the locker room. He was on his couch.</p>
+      <p><sup>3</sup> All series results and previews reflect the state of play at time of writing. Game 7 outcome pending.</p>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Stick Talk - Where hockey meets laughs</p>
+    <p><a href="../../index.html">Back to Home</a></p>
+  </footer>
+
+  <script src="../../grass.js"></script>
+</body>
+</html>
